@@ -43,81 +43,78 @@ jQuery(window).on('load',  function() {
 
     <!-- BEGIN Advanced Google Analytics - http://deconf.com/advanced-google-analytics-joomla/ -->
     <script type="text/javascript">
-(function($){
-    $(window).load(function() {
-            $('a').filter(function() {
-				return this.href.match(/.*\.(zip|mp3*|mpe*g|pdf|docx*|pptx*|xlsx*|jpe*g|png|gif|tiff|rar*)(\?.*)?$/);
-            }).click(function(e) {
-                ga('send','event', 'download', 'click', this.href);
+        (function ($) {
+            $(window).load(function () {
+                $('a').filter(function () {
+                    return this.href.match(/.*\.(zip|mp3*|mpe*g|pdf|docx*|pptx*|xlsx*|jpe*g|png|gif|tiff|rar*)(\?.*)?$/);
+                }).click(function (e) {
+                    ga('send', 'event', 'download', 'click', this.href);
+                });
+                $('a[href^="mailto"]').click(function (e) {
+                    ga('send', 'event', 'email', 'send', this.href);
+                });
+                var loc = location.host.split('.');
+                while (loc.length > 2) {
+                    loc.shift();
+                }
+                loc = loc.join('.');
+                var localURLs = [
+                    loc,
+                    'engineering-a.com.ua'
+                ];
+                $('a[href^="http"]').filter(function () {
+                    if (!this.href.match(/.*\.(zip|mp3*|mpe*g|pdf|docx*|pptx*|xlsx*|jpe*g|png|gif|tiff|rar*)(\?.*)?$/)) {
+                        for (var i = 0; i < localURLs.length; i++) {
+                            if (this.href.indexOf(localURLs[i]) == -1) return this.href;
+                        }
+                    }
+                }).click(function (e) {
+                    ga('send', 'event', 'outbound', 'click', this.href);
+                });
             });
-            $('a[href^="mailto"]').click(function(e) {
-                ga('send','event', 'email', 'send', this.href);
-             });
-            var loc = location.host.split('.');
-            while (loc.length > 2) { loc.shift(); }
-            loc = loc.join('.');
-            var localURLs = [
-                              loc,
-                              'engineering-a.com.ua'
-                            ];
-            $('a[href^="http"]').filter(function() {
-			if (!this.href.match(/.*\.(zip|mp3*|mpe*g|pdf|docx*|pptx*|xlsx*|jpe*g|png|gif|tiff|rar*)(\?.*)?$/)){
-				for (var i = 0; i < localURLs.length; i++) {
-					if (this.href.indexOf(localURLs[i]) == -1) return this.href;
-				}
-			}
-            }).click(function(e) {
-                ga('send','event', 'outbound', 'click', this.href);
-            });
-    });
-})(jQuery);
-</script>
+        })(jQuery);
+    </script>
     <script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-145388654-1', 'auto');
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-145388654-1', 'auto');
 
-ga('require', 'displayfeatures');
-ga('send', 'pageview');
-</script>
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
     <!-- END Advanced Google Analytics -->
-
-
 </head>
+
 
 <body class=" option-com_content view-featured itemid-101 lang-uk-ua">
 <div class="top">
     <div class="supwrap">
         <div class="logo">
-
             <a href="http://engineering-a.com.ua"><img src="templates/apelsun/images/logo-2-gss.png" alt="logo"></a>
         </div>
+
         <div class="mobile-menu">
             <div class="topmenu">
                 <div class="moduletable nav-menu">
-
-
                     <ul class="nav menu mod-list">
-                        <li class="item-155"><a href="/#about" >Про нас</a></li><li class="item-156"><a href="/#services" >Послуги</a></li><li class="item-157"><a href="/#docs" >Документація</a></li><li class="item-158"><a href="/#clients" >Проекти</a></li><li class="item-159"><a href="/#partners" >Партнери</a></li><li class="item-160"><a href="/#contacts" >Контакти</a></li><li class="item-165"><a href="/news" >Новини</a></li></ul>
-
+                        <li class="item-155"><a href="/#about" >Про нас</a></li>
+                        <li class="item-156"><a href="/#services" >Послуги</a></li>
+                        <li class="item-157"><a href="/#docs" >Документація</a></li>
+                        <li class="item-158"><a href="/#clients" >Проекти</a></li>
+                        <li class="item-159"><a href="/#partners" >Партнери</a></li>
+                        <li class="item-160"><a href="/#contacts" >Контакти</a></li>
+                        <li class="item-165"><a href="/news" >Новини</a></li>
+                    </ul>
                 </div>
-
-
             </div>
             <div class="topstuff">
                 <div class="moduletable phone">
-
-
-
-
                     <div class="custom phone"  >
-                        <p><a href="tel:+380442577027">+38 (044) 257-70-27</a></p></div>
-
+                        <p><a href="tel:+380442577027">+38 (044) 257-70-27</a></p>
+                    </div>
                 </div>
-
-
             </div>
         </div>
         <div class="menu-button" id="nav-icon2">
@@ -131,47 +128,29 @@ ga('send', 'pageview');
     </div>
 </div>
 
-<div class="mainarea">
 
+
+<div class="mainarea">
     <div class="main">
         <div class="moduletable about-1 light-section">
-
-
-
-<!--            <div style="background-image: url(images/slider1_2.jpg);">-->
             <div style="background-image: url(images/hik6.jpg);">
-
                 <div class="supwrap">
-
                     <div>Компанія повного циклу</div>
-
                     <h2>Від безпечного міста <br />до безпечної країни</h2>
-
                     <button class="main-button">залишити заявку</button>
-
-
                 </div>
-
             </div>
-
         </div>
 
+
+
         <div  id ="about" class="moduletable about-2">
-
-
-
             <div style="background-image: url(images/bg-2_neww.jpg);">
-
                 <div class="supwrap">
-
                     <h2>Компанія «ІНЖЕНІРИНГ – АНАЛІТИКА»<br />створена фахівцями та експертами ринку систем безпеки</h2>
-
                     <div class="desc-text">Ми маємо багаторічний досвід в реалізації різних проектів побутового, комерційного та муніципального характеру.<br />Весь досвід та зусилля фахівців компанії спрямовані на побудову комплексної системи безпеки Держави, яка має стати послідовним результатом реалізації цільових муніципальних програм «Безпечне Місто» та «Безпечні дороги».</div>
-
                     <div class="vertical">Про нас</div>
-
                     <button class="main-button btn-about">Детальніше</button>
-
                     <div class="item-block">
                         <div style="background-image: url(images/ach-1.png);" class="one-item">
                             <h3>15+ років досвіду</h3>
@@ -186,32 +165,20 @@ ga('send', 'pageview');
                             <p>з повним комплексом послуг</p>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
 
+
+
         <div class="moduletable about-3 light-section">
-
-
-
             <div style="background-image: url(images/bg-3__.jpg);">
-
                 <div class="supwrap">
-
                     <div class="left">
-
                         <h2>МИ БУДУЄМО ЦІЛІСНІ<br />СИСТЕМИ БЕЗПЕКИ</h2>
-
                         <div></div>
-
                         <button class="main-button">співпрацювати</button>
-
                     </div>
-
                     <div class="right">
                         <ul>
                             <li>проектування</li>
@@ -224,96 +191,61 @@ ga('send', 'pageview');
                             <li>Сервісне обслуговування</li>
                         </ul>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
+
+
 
         <div  id ="services" class="moduletable areas">
-
-
-
             <div class="supwrap">
-
                 <h2 class="vertical">Послуги</h2>
-
                 <ul>
-
                     <li class="area-block"><div class='right' style='background-image: url("images/areas/ar-1.jpeg");'></div><div class="left"><h3>Безпека - це</h3><ul><li>Ідентифікація загроз та ризиків</li><li>Удосконалення захисту</li><li>Зниження рівня терористичної загрози</li><li>Підвищення швидкості реагування на надзвичайні події</li><li>Ефективне розслідування злочинів</li><li>Застосування нових форм і методів боротьби зі злочинністю: моніторингові центри, відеоспостереження, програмні засоби аналітики</li><li>Забезпечення інформативно-аналітичного супроводження діяльності місцевих органів влади</li><li>Оперативне усунення надзвичайних ситуацій</li><li>Виявлення і реагування на порушення закону</li></ul><button class='main-button'>замовити</button></div></li><li class="area-block"><div class='right' style='background-image: url("images/areas/ar-2_.jpg");'></div><div class="left"><h3>Програма «Безпечне місто» — це:</h3><ul><li>Оперативний цілодобовий контроль ситуації на вулицях і об’єктах міста в режимі реального часу;</li><li>Ведення відео і аудіоархіву;</li><li>Автоматичне оповіщення про виникнення надзвичайних ситуацій відповідних служб і організацій, надання візуальної інформації з місць установки телекамер;</li><li>Відновлення ходу подій на основі записаних відеоматеріалів;</li><li>Інтеграція відеоінформації з інформацією інших автоматизованих систем міської інфраструктури.</li></ul><button class='main-button'>замовити</button></div></li>
                 </ul>
-
             </div>
-
-
-
-
         </div>
 
+
+
         <div  id ="docs" class="moduletable docs-block light-section">
-
-
-
-
             <div class="supwrap">
                 <h2 class="vertical">Документація</h2>
                 <div class="text">Правомірність діяльності компанії підтверджено відповідними<br />ліцензіями та сертифікатами</div>
-
                 <div class="slider">
-
                     <div class="item">
                         <img src="images/areas/docs/specdozvil.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/ISO.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/ekspertiza.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/Dozvil_gaz.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/Dozvil_mechanical.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/lic_bud1.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/lic_bud2.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/-OK-NET-odeskabel.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/areas/docs/pro_access.jpg" alt="doc">
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-
     </div>
+
+
 
     <div class="main-content" id="clients">
         <div class="supwrap">
@@ -323,190 +255,147 @@ ga('send', 'pageview');
                     <p><span>За роки роботи ми допомогли багатьом приватним особам і компаніям. </span></p>
                     <p><span>Ми цінуємо вашу довіру!</span></p>
                 </div>
-
-
                 <div class="zoo-item-list product-clients zoo-list product-clients">
                     <div class="product-items">
                         <div class="layout-default ">
-
-
-                            <div class="company"><span class="element element-itemname first last">
-	 <a title="Дніпро Безпечне Місто" href="/bezpechne-misto/item/dnipro-bezpechne-misto">Дніпро Безпечне Місто</a></span></div>
-
-
-                            <div class="project-img"><span class="element element-image first last">
-
-	<a href="/bezpechne-misto/item/dnipro-bezpechne-misto"   title="Дніпро Безпечне Місто"  ><img src="http://engineering-a.com.ua/media/zoo/images/2_dnipro_safe_city_c95fcf98b6d3fb99206e2dbb41f7139a.jpg" title="Дніпро Безпечне Місто" alt="Дніпро Безпечне Місто" width="315" height="278" /></a>
-</span></div>
-
-
-
-
-
-                        </div></div>
+                            <div class="company">
+                                <span class="element element-itemname first last">
+                                    <a title="Дніпро Безпечне Місто" href="/bezpechne-misto/item/dnipro-bezpechne-misto">Дніпро Безпечне Місто</a>
+                                </span>
+                            </div>
+                            <div class="project-img">
+                                <span class="element element-image first last">
+                                    <a href="/bezpechne-misto/item/dnipro-bezpechne-misto"   title="Дніпро Безпечне Місто"  >
+                                        <img src="http://engineering-a.com.ua/media/zoo/images/2_dnipro_safe_city_c95fcf98b6d3fb99206e2dbb41f7139a.jpg" title="Дніпро Безпечне Місто" alt="Дніпро Безпечне Місто" width="315" height="278" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-items">
                         <div class="layout-default ">
-
-
-                            <div class="company"><span class="element element-itemname first last">
-	 <a title="Одеса Безпечне місто" href="/bezpechne-misto/item/odessa-smart-sity">Одеса Безпечне місто</a></span></div>
-
-
-                            <div class="project-img"><span class="element element-image first last">
-
-	<a href="/bezpechne-misto/item/odessa-smart-sity"   title="Одеса Безпечне місто"  ><img src="http://engineering-a.com.ua/media/zoo/images/4_odessa__a030b3edbfc52b481a995d69fdf0e2ac.jpg" title="Одеса Безпечне місто" alt="Одеса Безпечне місто" width="315" height="278" /></a>
-</span></div>
-
-
-
-
-
-                        </div></div>
+                            <div class="company">
+                                <span class="element element-itemname first last">
+	                                <a title="Одеса Безпечне місто" href="/bezpechne-misto/item/odessa-smart-sity">Одеса Безпечне місто</a>
+                                </span>
+                            </div>
+                            <div class="project-img">
+                                <span class="element element-image first last">
+                                    <a href="/bezpechne-misto/item/odessa-smart-sity"   title="Одеса Безпечне місто"  >
+                                        <img src="http://engineering-a.com.ua/media/zoo/images/4_odessa__a030b3edbfc52b481a995d69fdf0e2ac.jpg" title="Одеса Безпечне місто" alt="Одеса Безпечне місто" width="315" height="278" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-items">
                         <div class="layout-default ">
-
-
-                            <div class="company"><span class="element element-itemname first last">
-	 <a title="Львів Безпечне місто" href="/bezpechne-misto/item/lviv">Львів Безпечне місто</a></span></div>
-
-
-                            <div class="project-img"><span class="element element-image first last">
-
-	<a href="/bezpechne-misto/item/lviv"   title="Львів Безпечне місто"  ><img src="http://engineering-a.com.ua/media/zoo/images/3_lviv_safe_city_c67d2c36594088e2e48ae005c0877ade.jpg" title="Львів Безпечне місто" alt="Львів Безпечне місто" width="315" height="278" /></a>
-</span></div>
-
-
-
-
-
-                        </div></div>
+                            <div class="company">
+                                <span class="element element-itemname first last">
+                                    <a title="Львів Безпечне місто" href="/bezpechne-misto/item/lviv">Львів Безпечне місто</a>
+                                </span>
+                            </div>
+                            <div class="project-img">
+                                <span class="element element-image first last">
+	                                <a href="/bezpechne-misto/item/lviv"   title="Львів Безпечне місто">
+                                        <img src="http://engineering-a.com.ua/media/zoo/images/3_lviv_safe_city_c67d2c36594088e2e48ae005c0877ade.jpg" title="Львів Безпечне місто" alt="Львів Безпечне місто" width="315" height="278" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-items">
                         <div class="layout-default ">
-
-
-                            <div class="company"><span class="element element-itemname first last">
-	 <a title="Система розпізнавання облич" href="/systema-rozpiznavannia-oblych-v-aeroportu/item/aeroport-boryspil">Система розпізнавання облич</a></span></div>
-
-
-                            <div class="project-img"><span class="element element-image first last">
-
-	<a href="/systema-rozpiznavannia-oblych-v-aeroportu/item/aeroport-boryspil"   title="Система розпізнавання облич"  ><img src="http://engineering-a.com.ua/media/zoo/images/buryspil_91604aa545ce889a6b299a09d6460052.jpg" title="Система розпізнавання облич" alt="Система розпізнавання облич" width="315" height="278" /></a>
-</span></div>
-
-
-
-
-
-                        </div></div>
+                            <div class="company">
+                                <span class="element element-itemname first last">
+	                                <a title="Система розпізнавання облич" href="/systema-rozpiznavannia-oblych-v-aeroportu/item/aeroport-boryspil">Система розпізнавання облич</a>
+                                </span>
+                            </div>
+                            <div class="project-img">
+                                <span class="element element-image first last">
+                                    <a href="/systema-rozpiznavannia-oblych-v-aeroportu/item/aeroport-boryspil"   title="Система розпізнавання облич">
+                                        <img src="http://engineering-a.com.ua/media/zoo/images/buryspil_91604aa545ce889a6b299a09d6460052.jpg" title="Система розпізнавання облич" alt="Система розпізнавання облич" width="315" height="278" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-items">
                         <div class="layout-default ">
-
-
-                            <div class="company"><span class="element element-itemname first last">
-	 <a title="Автомобіль спеціального призначення" href="/avtomobil-spetsialnoho-pryznachennia/item/operatyvno-shtabnyi-avtomobil-spetsialnoho-pryznachennia">Автомобіль спеціального призначення</a></span></div>
-
-
-                            <div class="project-img"><span class="element element-image first last">
-
-	<a href="/avtomobil-spetsialnoho-pryznachennia/item/operatyvno-shtabnyi-avtomobil-spetsialnoho-pryznachennia"   title="Автомобіль спеціального призначення"  ><img src="http://engineering-a.com.ua/media/zoo/images/auto_938c24ab5223a87f27c90792a12be2f2.jpg" title="Автомобіль спеціального призначення" alt="Автомобіль спеціального призначення" width="315" height="278" /></a>
-</span></div>
-
-
-
-
-
-                        </div></div>
+                            <div class="company">
+                                <span class="element element-itemname first last">
+                                    <a title="Автомобіль спеціального призначення" href="/avtomobil-spetsialnoho-pryznachennia/item/operatyvno-shtabnyi-avtomobil-spetsialnoho-pryznachennia">Автомобіль спеціального призначення</a>
+                                </span>
+                            </div>
+                            <div class="project-img">
+                                <span class="element element-image first last">
+                                    <a href="/avtomobil-spetsialnoho-pryznachennia/item/operatyvno-shtabnyi-avtomobil-spetsialnoho-pryznachennia" title="Автомобіль спеціального призначення">
+                                        <img src="http://engineering-a.com.ua/media/zoo/images/auto_938c24ab5223a87f27c90792a12be2f2.jpg" title="Автомобіль спеціального призначення" alt="Автомобіль спеціального призначення" width="315" height="278" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-items">
                         <div class="layout-default ">
-
-
-                            <div class="company"><span class="element element-itemname first last">
-	 <a title="GLUSCO" href="/komertsiini-obiekty/item/azs-glusko-g-dnepr">GLUSCO</a></span></div>
-
-
-                            <div class="project-img"><span class="element element-image first last">
-
-	<a href="/komertsiini-obiekty/item/azs-glusko-g-dnepr"   title="GLUSCO"  ><img src="http://engineering-a.com.ua/media/zoo/images/glusco_edc67b4ed3e80f7c7ea637b600445186.jpg" title="GLUSCO" alt="GLUSCO" width="315" height="278" /></a>
-</span></div>
-
-
-
-
-
-                        </div></div>
+                            <div class="company">
+                                <span class="element element-itemname first last">
+	                                <a title="GLUSCO" href="/komertsiini-obiekty/item/azs-glusko-g-dnepr">GLUSCO</a>
+                                </span>
+                            </div>
+                            <div class="project-img">
+                                <span class="element element-image first last">
+                                    <a href="/komertsiini-obiekty/item/azs-glusko-g-dnepr" title="GLUSCO">
+                                        <img src="http://engineering-a.com.ua/media/zoo/images/glusco_edc67b4ed3e80f7c7ea637b600445186.jpg" title="GLUSCO" alt="GLUSCO" width="315" height="278" /></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-
                 <div id="loadMore">Дивитись більше</div>
             </div>
+
             <div class="contentarea">
-                <div id="system-message-container">
-                </div>
-
-                <div class="blog-featured" itemscope itemtype="https://schema.org/Blog">
-
-
-
-
-                </div>
-
+                <div id="system-message-container"></div>
+                <div class="blog-featured" itemscope itemtype="https://schema.org/Blog"></div>
             </div>
         </div>
     </div>
 
     <div class="under-content">
         <div  id ="partners" class="moduletable partners light-section">
-
-
-
-
             <div class="supwrap">
                 <h2 class="vertical">Партнери</h2>
                 <div class="text"></div>
-
                 <div class="slider">
-
                     <div class="item">
                         <img src="images/partners/Logo-white.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/partners/Hikvision-Logo.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/partners/Logo-white.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/partners/Dahua-Logo.jpg" alt="doc">
                     </div>
-
-
                     <div class="item">
                         <img src="images/partners/Logo-white.jpg" alt="doc">
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-
     </div>
+
+
+
     <div class="split-content">
         <div class="gradient"></div>
         <div class="supwrap">
             <!--                // Вывести вертикальную строку..-->
             <div class="sidebar-left">
                 <div  id ="contacts" class="moduletable contacts">
-
-
-
-
                     <h2 class="vertical">Контакти</h2>
 
                     <p class="heading">Адреса</p>
@@ -521,31 +410,15 @@ ga('send', 'pageview');
 
                     <div class="contacts-bottom">
                         <div class="left">
-
                             <a href="http://www.facebook.com/EngineeringAnalytics/" target="_blank"><img data-hov="images/social/facebook_hover.png" src="images/social/facebook.png" alt="social" height="30"></a>
-
-
                             <a href="http://www.instagram.com/engineering_analytics/" target="_blank"><img data-hov="images/social/instagram_hover.png" src="images/social/instagram.png" alt="social" height="30"></a>
-
-
-                            <!--        <div class="heading-show">--><!--</div>-->
                         </div>
-
-
-                        <!--    <div class="desc-show">--><!--</div>-->
                     </div>
-
-
                 </div>
-
-
             </div>
 
             <div class="sidebar-right">
                 <div class="moduletable question-form">
-
-
-
                     <div class="rsform question-form">
                         <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Залишились питання?</h2>
                             <div id="rsform_error_5" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
@@ -554,37 +427,64 @@ ga('send', 'pageview');
                                 <div class="rsform-block rsform-block-name">
                                     <div class="formControlLabel"><strong class="formRequired"></strong></div>
                                     <div class="formControls">
-                                        <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component37" class="formNoError">неправильні дані
-</span></span></div>
+                                        <div class="formBody">
+                                            <input type="text" value="" size="20" placeholder="Ваше Ім'я" name="form[name]" id="name" class="rsform-input-box" />
+                                            <span class="formValidation">
+                                                <span id="component37" class="formNoError">неправильні дані</span>
+                                            </span>
+                                        </div>
                                         <p class="formDescription"></p>
                                     </div>
                                 </div>
                                 <div class="rsform-block rsform-block-phone">
                                     <div class="formControlLabel"><strong class="formRequired"></strong></div>
                                     <div class="formControls">
-                                        <div class="formBody"><input type="text" value="" size="20" placeholder="Номер телефону" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component38" class="formNoError">неправильні дані
-</span></span></div>
+                                        <div class="formBody">
+                                            <input type="text" value="" size="20" placeholder="Номер телефону" name="form[phone]" id="phone" class="rsform-input-box" />
+                                            <span class="formValidation">
+                                                <span id="component38" class="formNoError">неправильні дані</span>
+                                            </span>
+                                        </div>
                                         <p class="formDescription"></p>
                                     </div>
                                 </div>
                                 <div class="rsform-block rsform-block-comment">
                                     <div class="formControlLabel"></div>
                                     <div class="formControls">
-                                        <div class="formBody"><textarea cols="50" rows="1" placeholder="Коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component39" class="formNoError">
-</span></span></div>
+                                        <div class="formBody">
+                                            <textarea cols="50" rows="1" placeholder="Коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                            <span class="formValidation">
+                                                <span id="component39" class="formNoError"></span>
+                                            </span>
+                                        </div>
                                         <p class="formDescription"></p>
                                     </div>
                                 </div>
-                                <div class='rsform-block rsform-block-upload'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component40" class="formNoError">неправильні дані</span><input type="file" name="form[upload]" id="upload" class="rsform-upload-box" /> <span class ='choose-file'></span> </label> </div>
+                                <div class='rsform-block rsform-block-upload'>
+                                    <label class="field-cv">
+                                        <span class="btn"><span>Прикріпити файл</span></span>
+                                        <span id="component40" class="formNoError">неправильні дані</span>
+                                        <input type="file" name="form[upload]" id="upload" class="rsform-upload-box" />
+                                        <span class ='choose-file'></span>
+                                    </label>
+                                </div>
                                 <div class="rsform-block rsform-block-submit">
                                     <div class="formControlLabel"></div>
                                     <div class="formControls">
-                                        <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Відправити</button><span class="formValidation"></span></div>
+                                        <div class="formBody">
+                                            <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Відправити</button>
+                                            <span class="formValidation"></span>
+                                        </div>
                                         <p class="formDescription"></p>
                                     </div>
                                 </div>
                             </fieldset>
-                            <input type="hidden" name="form[formId]" value="5"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(5);
+                            <input type="hidden" name="form[formId]" value="5"/>
+                        </form>
+
+                        <script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script>
+                        <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(5);
 			var submitElement = RSFormPro.getElementByType(5, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -599,26 +499,22 @@ ga('send', 'pageview');
 				}
 			}
 			});
-			</script>
+            			</script>
                         <script type="text/javascript">
-ajaxExtraValidationScript[5] = function(task, formId, data){
-var formComponents = {};
-formComponents[37]='name';formComponents[38]='phone';formComponents[39]='comment';
-ajaxDisplayValidationErrors(formComponents, task, formId, data);
-};
-</script></div>
+                            ajaxExtraValidationScript[5] = function(task, formId, data){
+                                var formComponents = {};
+                                formComponents[37]='name';formComponents[38]='phone';formComponents[39]='comment';
+                                ajaxDisplayValidationErrors(formComponents, task, formId, data);
+                            };
+                        </script>
+
+                    </div>
                 </div>
-
-
             </div>
         </div>
         <div class="bottom-content">
             <div class="moduletable .map">
-
-
-
-                <div id='map' class="apelsun-mapbox-wrap id9e5eea38"
-                     style='width: 100%; height: 899px;'></div>
+                <div id='map' class="apelsun-mapbox-wrap id9e5eea38" style='width: 100%; height: 899px;'></div>
 
                 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZWEtYXBlbHN1biIsImEiOiJjam54NnNldmwwcm4xM3FranpxZmI5MXNtIn0.2xl7mU_k37DdeNWWdaeMaw';
@@ -639,22 +535,16 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
                 .setHTML('<h3>' + "Engineering Analytics" + '</h3><p>' + "" + '</p>'))
             .addTo(map);
 
-</script>
+                </script>
             </div>
-
-
         </div>
     </div>
 </div>
 
 <div class="bottom">
     <div class="supwrap">
-        <div class="footer-top">
-
-        </div>
-        <div class="footer-bottom">
-
-        </div>
+        <div class="footer-top"></div>
+        <div class="footer-bottom"></div>
         <div class="footer">
             <div class="left">© ТОВ “Інженіринг — Аналітика” 2013-2018. Всі права захищено</div>
             <div class="right">
@@ -669,50 +559,83 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
 
 <div class="forms-block">
     <div class="moduletable app-form eng-form">
-
-
-
         <div class="rsform app-form eng-form">
-            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Системи безпеки</h2>
+            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/">
+                <h2>Системи безпеки</h2>
                 <p>Залиште заявку і наші спеціалісти зв'яжуться<br>
                     з Вами найближчим часом</p>
                 <div id="rsform_error_11" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
                 <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
                 <fieldset class="formHorizontal formContainer" id="rsform_11_page_0">
                     <div class="rsform-block rsform-block-name">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component67" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component67" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-phone">
                         <div class="formControlLabel"><strong class="formRequired"></strong></div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component68" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component68" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-comment">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component69" class="formNoError"></span></span></div>
+                            <div class="formBody">
+                                <textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                <span class="formValidation">
+                                    <span id="component69" class="formNoError"></span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
-                    <div class='rsform-block rsform-block-file-6'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component70" class="formNoError">неправильні дані</span><input type="file" name="form[file-6]" id="file-6" class="rsform-upload-box" /> <span class ='choose-file'></span> </label> </div>
+                    <div class='rsform-block rsform-block-file-6'>
+                        <label class="field-cv">
+                            <span class="btn">
+                                <span>Прикріпити файл</span>
+                            </span>
+                            <span id="component70" class="formNoError">неправильні дані</span>
+                            <input type="file" name="form[file-6]" id="file-6" class="rsform-upload-box" />
+                            <span class ='choose-file'></span>
+                        </label>
+                    </div>
                     <div class="rsform-block rsform-block-submit">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button><span class="formValidation"></span></div>
+                            <div class="formBody">
+                                <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button">Залишити заявку</button>
+                                <span class="formValidation"></span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                 </fieldset>
+
                 <div class="close-block"></div>
-                <input type="hidden" name="form[formId]" value="11"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(11);
+                <input type="hidden" name="form[formId]" value="11"/>
+            </form>
+
+            <script type="text/javascript">
+                RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";
+            </script>
+            <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(11);
 			var submitElement = RSFormPro.getElementByType(11, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -734,54 +657,90 @@ var formComponents = {};
 formComponents[67]='name';formComponents[68]='phone';formComponents[69]='comment';
 ajaxDisplayValidationErrors(formComponents, task, formId, data);
 };
-</script></div>
+            </script>
+        </div>
     </div>
 
     <div class="moduletable app-form app-true">
-
-
-
         <div class="rsform app-form app-true">
-            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Форма заявки</h2>
+            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/">
+                <h2>Форма заявки</h2>
                 <p>Залиште заявку і наші спеціалісти зв'яжуться<br>
                     з Вами найближчим часом</p>
-                <div id="rsform_error_7" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
+                <div id="rsform_error_7" style="display: none;">
+                    <p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p>
+                </div>
                 <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
                 <fieldset class="formHorizontal formContainer" id="rsform_7_page_0">
                     <div class="rsform-block rsform-block-name">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component47" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component47" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-phone">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component48" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component48" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-comment">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component49" class="formNoError"></span></span></div>
+                            <div class="formBody">
+                                <textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                <span class="formValidation">
+                                    <span id="component49" class="formNoError"></span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
-                    <div class='rsform-block rsform-block-file-1'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component50" class="formNoError">неправильні дані</span><input type="file" name="form[file-1]" id="file-1" class="rsform-upload-box" /> <span class ='choose-file'> </span> </label> </div>
+                    <div class='rsform-block rsform-block-file-1'>
+                        <label class="field-cv">
+                            <span class="btn">
+                                <span>Прикріпити файл</span>
+                            </span>
+                            <span id="component50" class="formNoError">неправильні дані</span>
+                            <input type="file" name="form[file-1]" id="file-1" class="rsform-upload-box" />
+                            <span class ='choose-file'></span>
+                        </label>
+                    </div>
                     <div class="rsform-block rsform-block-submit">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button><span class="formValidation"></span></div>
+                            <div class="formBody">
+                                <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button">Залишити заявку</button>
+                                <span class="formValidation"></span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                 </fieldset>
                 <div class="close-block"></div>
-                <input type="hidden" name="form[formId]" value="7"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(7);
+                <input type="hidden" name="form[formId]" value="7"/>
+            </form>
+            <script type="text/javascript">
+                RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";
+            </script>
+            <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(7);
 			var submitElement = RSFormPro.getElementByType(7, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -798,59 +757,96 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
 			});
 			</script>
             <script type="text/javascript">
-ajaxExtraValidationScript[7] = function(task, formId, data){
-var formComponents = {};
-formComponents[47]='name';formComponents[48]='phone';formComponents[49]='comment';
-ajaxDisplayValidationErrors(formComponents, task, formId, data);
-};
-</script></div>
+                ajaxExtraValidationScript[7] = function(task, formId, data){
+                    var formComponents = {};
+                    formComponents[47]='name';formComponents[48]='phone';formComponents[49]='comment';
+                    ajaxDisplayValidationErrors(formComponents, task, formId, data);
+                };
+            </script>
+        </div>
     </div>
 
     <div class="moduletable app-form coop-form">
-
-
-
         <div class="rsform app-form coop-form">
-            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Форма співпраці</h2>
+            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/">
+                <h2>Форма співпраці</h2>
                 <p>Залиште заявку і наші спеціалісти зв'яжуться<br>
                     з Вами найближчим часом</p>
-                <div id="rsform_error_8" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
+                <div id="rsform_error_8" style="display: none;">
+                    <p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p>
+                </div>
                 <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
                 <fieldset class="formHorizontal formContainer" id="rsform_8_page_0">
                     <div class="rsform-block rsform-block-name">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component52" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component52" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-phone">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component53" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component53" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-comment">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component54" class="formNoError"></span></span></div>
+                            <div class="formBody">
+                                <textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                <span class="formValidation">
+                                    <span id="component54" class="formNoError"></span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
-                    <div class='rsform-block rsform-block-file-2'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component55" class="formNoError">неправильні дані</span><input type="file" name="form[file-2]" id="file-2" class="rsform-upload-box" /> <span class ='choose-file'></span> </label> </div>
+                    <div class='rsform-block rsform-block-file-2'>
+                        <label class="field-cv">
+                            <span class="btn">
+                                <span>Прикріпити файл</span>
+                            </span>
+                            <span id="component55" class="formNoError">неправильні дані</span>
+                            <input type="file" name="form[file-2]" id="file-2" class="rsform-upload-box" />
+                            <span class ='choose-file'></span>
+                        </label>
+                    </div>
                     <div class="rsform-block rsform-block-submit">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button><span class="formValidation"></span></div>
+                            <div class="formBody">
+                                <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button">Залишити заявку</button>
+                                <span class="formValidation"></span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                 </fieldset>
                 <div class="close-block"></div>
-                <input type="hidden" name="form[formId]" value="8"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(8);
+                <input type="hidden" name="form[formId]" value="8"/>
+            </form>
+
+            <script type="text/javascript">
+                RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";
+            </script>
+            <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(8);
 			var submitElement = RSFormPro.getElementByType(8, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -867,59 +863,94 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
 			});
 			</script>
             <script type="text/javascript">
-ajaxExtraValidationScript[8] = function(task, formId, data){
-var formComponents = {};
-formComponents[52]='name';formComponents[53]='phone';formComponents[54]='comment';
-ajaxDisplayValidationErrors(formComponents, task, formId, data);
-};
-</script></div>
+                ajaxExtraValidationScript[8] = function(task, formId, data){
+                    var formComponents = {};
+                    formComponents[52]='name';formComponents[53]='phone';formComponents[54]='comment';
+                    ajaxDisplayValidationErrors(formComponents, task, formId, data);
+                };
+            </script>
+        </div>
     </div>
 
     <div class="moduletable app-form outer-eng-form">
-
-
-
         <div class="rsform app-form outer-eng-form">
-            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Системи протипожежного захисту</h2>
+            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/">
+                <h2>Системи протипожежного захисту</h2>
                 <p>Залиште заявку і наші спеціалісти зв'яжуться<br>
                     з Вами найближчим часом</p>
-                <div id="rsform_error_10" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
+                <div id="rsform_error_10" style="display: none;">
+                    <p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p>
+                </div>
                 <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
                 <fieldset class="formHorizontal formContainer" id="rsform_10_page_0">
                     <div class="rsform-block rsform-block-name">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component62" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component62" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-phone">
-                        <div class="formControlLabel"><strong class="formRequired"></strong></div>
+                        <div class="formControlLabel">
+                            <strong class="formRequired"></strong>
+                        </div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component63" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component63" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-comment">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component64" class="formNoError"></span></span></div>
+                            <div class="formBody">
+                                <textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                <span class="formValidation">
+                                    <span id="component64" class="formNoError"></span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
-                    <div class='rsform-block rsform-block-file-5'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component65" class="formNoError">неправильні дані</span><input type="file" name="form[file-5]" id="file-5" class="rsform-upload-box" /> <span class ='choose-file'></span> </label> </div>
+                    <div class='rsform-block rsform-block-file-5'>
+                        <label class="field-cv">
+                            <span class="btn"><span>Прикріпити файл</span></span>
+                            <span id="component65" class="formNoError">неправильні дані</span>
+                            <input type="file" name="form[file-5]" id="file-5" class="rsform-upload-box" />
+                            <span class ='choose-file'></span>
+                        </label>
+                    </div>
                     <div class="rsform-block rsform-block-submit">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button><span class="formValidation"></span></div>
+                            <div class="formBody">
+                                <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button">Залишити заявку</button>
+                                <span class="formValidation"></span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                 </fieldset>
                 <div class="close-block"></div>
-                <input type="hidden" name="form[formId]" value="10"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(10);
+                <input type="hidden" name="form[formId]" value="10"/>
+            </form>
+
+            <script type="text/javascript">
+                RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";
+            </script>
+            <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(10);
 			var submitElement = RSFormPro.getElementByType(10, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -936,59 +967,90 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
 			});
 			</script>
             <script type="text/javascript">
-ajaxExtraValidationScript[10] = function(task, formId, data){
-var formComponents = {};
-formComponents[62]='name';formComponents[63]='phone';formComponents[64]='comment';
-ajaxDisplayValidationErrors(formComponents, task, formId, data);
-};
-</script></div>
+    ajaxExtraValidationScript[10] = function(task, formId, data){
+        var formComponents = {};
+        formComponents[62]='name';formComponents[63]='phone';formComponents[64]='comment';
+        ajaxDisplayValidationErrors(formComponents, task, formId, data);
+    };
+            </script>
+        </div>
     </div>
 
     <div class="moduletable app-form safety-form">
-
-
-
         <div class="rsform app-form safety-form">
-            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Системи безпеки</h2>
+            <form method="post" id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/">
+                <h2>Системи безпеки</h2>
                 <p>Залиште заявку і наші спеціалісти зв'яжуться<br>
                     з Вами найближчим часом</p>
-                <div id="rsform_error_11" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
+                <div id="rsform_error_11" style="display: none;">
+                    <p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p>
+                </div>
                 <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
                 <fieldset class="formHorizontal formContainer" id="rsform_11_page_0">
                     <div class="rsform-block rsform-block-name">
                         <div class="formControlLabel"><strong class="formRequired"></strong></div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component67" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component67" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-phone">
                         <div class="formControlLabel"><strong class="formRequired"></strong></div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component68" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component68" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-comment">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component69" class="formNoError"></span></span></div>
+                            <div class="formBody">
+                                <textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                <span class="formValidation">
+                                    <span id="component69" class="formNoError"></span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
-                    <div class='rsform-block rsform-block-file-6'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component70" class="formNoError">неправильні дані</span><input type="file" name="form[file-6]" id="file-6" class="rsform-upload-box" /> <span class ='choose-file'></span> </label> </div>
+                    <div class='rsform-block rsform-block-file-6'>
+                        <label class="field-cv">
+                            <span class="btn"><span>Прикріпити файл</span></span>
+                            <span id="component70" class="formNoError">неправильні дані</span>
+                            <input type="file" name="form[file-6]" id="file-6" class="rsform-upload-box" />
+                            <span class ='choose-file'></span>
+                        </label>
+                    </div>
                     <div class="rsform-block rsform-block-submit">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button><span class="formValidation"></span></div>
+                            <div class="formBody">
+                                <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button>
+                                <span class="formValidation"></span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                 </fieldset>
                 <div class="close-block"></div>
-                <input type="hidden" name="form[formId]" value="11"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(11);
+                <input type="hidden" name="form[formId]" value="11"/>
+            </form>
+
+            <script type="text/javascript">
+                RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";
+            </script>
+            <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(11);
 			var submitElement = RSFormPro.getElementByType(11, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -1005,59 +1067,90 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
 			});
 			</script>
             <script type="text/javascript">
-ajaxExtraValidationScript[11] = function(task, formId, data){
-var formComponents = {};
-formComponents[67]='name';formComponents[68]='phone';formComponents[69]='comment';
-ajaxDisplayValidationErrors(formComponents, task, formId, data);
-};
-</script></div>
+                ajaxExtraValidationScript[11] = function(task, formId, data){
+                    var formComponents = {};
+                    formComponents[67]='name';formComponents[68]='phone';formComponents[69]='comment';
+                    ajaxDisplayValidationErrors(formComponents, task, formId, data);
+                };
+            </script>
+        </div>
     </div>
 
     <div class="moduletable app-form other-form">
-
-
-
         <div class="rsform app-form other-form">
-            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/"><h2>Різне</h2>
+            <form method="post"  id="userForm" class="formResponsive" enctype="multipart/form-data" action="http://engineering-a.com.ua/">
+                <h2>Різне</h2>
                 <p>Залиште заявку і наші спеціалісти зв'яжуться<br>
                     з Вами найближчим часом</p>
-                <div id="rsform_error_12" style="display: none;"><p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p></div>
+                <div id="rsform_error_12" style="display: none;">
+                    <p class="formRed">Будь ласка, заповніть всі обов'язкові поля!</p>
+                </div>
                 <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
                 <fieldset class="formHorizontal formContainer" id="rsform_12_page_0">
                     <div class="rsform-block rsform-block-name">
                         <div class="formControlLabel"><strong class="formRequired"></strong></div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" /><span class="formValidation"><span id="component72" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Ваше Ім'я*" name="form[name]" id="name" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component72" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-phone">
                         <div class="formControlLabel"><strong class="formRequired"></strong></div>
                         <div class="formControls">
-                            <div class="formBody"><input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" /><span class="formValidation"><span id="component73" class="formNoError">неправильні дані
-</span></span></div>
+                            <div class="formBody">
+                                <input type="text" value="" size="20" placeholder="Телефон або Email*" name="form[phone]" id="phone" class="rsform-input-box" />
+                                <span class="formValidation">
+                                    <span id="component73" class="formNoError">неправильні дані</span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                     <div class="rsform-block rsform-block-comment">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea><span class="formValidation"><span id="component74" class="formNoError"></span></span></div>
+                            <div class="formBody">
+                                <textarea cols="50" rows="1" placeholder="Добавити коментар" name="form[comment]" id="comment" class="rsform-text-box"></textarea>
+                                <span class="formValidation">
+                                    <span id="component74" class="formNoError"></span>
+                                </span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
-                    <div class='rsform-block rsform-block-file-7'> <label class="field-cv"> <span class="btn"><span>Прикріпити файл</span></span> <span id="component75" class="formNoError">неправильні дані</span><input type="file" name="form[file-7]" id="file-7" class="rsform-upload-box" /> <span class ='choose-file'></span> </label> </div>
+                    <div class='rsform-block rsform-block-file-7'>
+                        <label class="field-cv">
+                            <span class="btn"><span>Прикріпити файл</span></span>
+                            <span id="component75" class="formNoError">неправильні дані</span>
+                            <input type="file" name="form[file-7]" id="file-7" class="rsform-upload-box" />
+                            <span class ='choose-file'></span>
+                        </label>
+                    </div>
                     <div class="rsform-block rsform-block-submit">
                         <div class="formControlLabel"></div>
                         <div class="formControls">
-                            <div class="formBody"><button type="submit" name="form[submit]" id="submit" class="rsform-submit-button" >Залишити заявку</button><span class="formValidation"></span></div>
+                            <div class="formBody">
+                                <button type="submit" name="form[submit]" id="submit" class="rsform-submit-button">Залишити заявку</button>
+                                <span class="formValidation"></span>
+                            </div>
                             <p class="formDescription"></p>
                         </div>
                     </div>
                 </fieldset>
                 <div class="close-block"></div>
-                <input type="hidden" name="form[formId]" value="12"/></form><script type="text/javascript">RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";</script><script type="text/javascript">rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(12);
+                <input type="hidden" name="form[formId]" value="12"/>
+            </form>
+
+            <script type="text/javascript">
+                RSFormPro.Ajax.URL = "\/component\/rsform\/?task=ajaxValidate";
+            </script>
+            <script type="text/javascript">
+            rsfp_addEvent(window, 'load', function(){var form = rsfp_getForm(12);
 			var submitElement = RSFormPro.getElementByType(12, 'submit');
 			for (i = 0; i < submitElement.length; i++) {
 				if (RSFormProUtils.hasClass(submitElement[i],'rsform-submit-button')) {
@@ -1074,20 +1167,17 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
 			});
 			</script>
             <script type="text/javascript">
-ajaxExtraValidationScript[12] = function(task, formId, data){
-var formComponents = {};
-formComponents[72]='name';formComponents[73]='phone';formComponents[74]='comment';
-ajaxDisplayValidationErrors(formComponents, task, formId, data);
-};
-</script></div>
+                ajaxExtraValidationScript[12] = function(task, formId, data){
+                    var formComponents = {};
+                    formComponents[72]='name';formComponents[73]='phone';formComponents[74]='comment';
+                    ajaxDisplayValidationErrors(formComponents, task, formId, data);
+                };
+            </script>
+        </div>
     </div>
-
-
 </div>
 <div class=" about-us-block overlay">
     <div class="moduletable">
-
-
         <div class="apelsun_simple" id="id29432b3c"><div id="close-btn"></div><h3>Основними завданнями побудови і розвитку комплексу "безпечне місто" є:</h3><div class="editor"><ul>
             <li><span style="color: #000000;">формування комунікаційної платформи для органів місцевого самоврядування з метою усунення ризиків забезпечення громадської безпеки, правопорядку і безпеки серидовища проживання на базі міжвідомчої взаємодії;</span></li>
             <li><span style="color: #000000;">розробка єдиних функціональних і технічних вимог до апаратно-програмних засобів, орієнтованим на ідентифікацію потенційних точок уразливості, прогнозування, реагування та попередження загроз забезпечення безпеки муніципального освіти;</span></li>
@@ -1097,8 +1187,6 @@ ajaxDisplayValidationErrors(formComponents, task, formId, data);
             <li><span style="color: #000000;">побудова і розвиток систем ситуаційного аналізу причин дестабілізації обстановки і прогнозування існуючих і потенційних загроз для забезпечення безпеки на селення, муніципального освіти. <br /></span></li>
         </ul></div></div>
     </div>
-
-
 </div>
 
 </body>
