@@ -1278,7 +1278,7 @@ h6 {
 
 .areas .supwrap li.area-block .left ul li:before {
     position: absolute;
-    content: "В·";
+    content: "·";
     font-size: 20px;
     left: -19px;
     top: -2px;
@@ -1971,7 +1971,7 @@ h6 {
 }
 
 .split-content {
-    min-height: 900px;
+    min-height: 450px;
     position: relative;
     z-index: 1;
 }
