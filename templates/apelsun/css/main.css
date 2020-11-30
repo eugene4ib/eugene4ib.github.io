@@ -809,7 +809,7 @@ h6 {
     left: 0;
     right: 0;
     margin: 0 auto;
-    background: #fff;
+    background: #1c1c1c;
     z-index: 40;
 }
 
@@ -844,10 +844,10 @@ h6 {
 
 .top .topmenu ul li a {
     text-decoration: none;
-    color: #363636;
+    color: #efd208;
     text-transform: uppercase;
     padding: 46px 15px;
-    font-weight: 300;
+    /*font-weight: bold;*/
     font-size: 16px;
 }
 
@@ -869,7 +869,7 @@ h6 {
 .top .topstuff .phone.custom a {
     cursor: pointer;
     text-decoration: none;
-    color: #363636;
+    color: #efd208;
     font-size: 18px;
 }
 
@@ -955,7 +955,7 @@ h6 {
 .about-1>div .supwrap>div {
     font-size: 31px;
     font-weight: 400;
-    line-height: 54px;
+    /*line-height: 54px;*/
     text-shadow: 0 1px 5px rgba(0, 0, 0, 0.53);
     color: #fff;
 }
@@ -3724,7 +3724,7 @@ h6 {
     .top .mobile-menu {
         height: 80vh;
         width: 100%;
-        background: #fff;
+        background: #1c1c1c;
         position: absolute;
         top: 74px;
         z-index: 1;
@@ -4549,11 +4549,11 @@ h6 {
     }
 
     .split-content {
-        min-height: 1350px;
+        min-height: 300px;
     }
 
     .split-content .gradient {
-        height: 955px;
+        height: 300px;
     }
 
     .split-content .supwrap .sidebar-left {
