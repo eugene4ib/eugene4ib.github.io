@@ -1,3 +1,0 @@
-РУКОВОДСТВО: КАК ЗАКРЫТЬ САЙТ ОТ ИНДЕКСАЦИИ В ПОИСКОВЫХ СИСТЕМАХ? РАБОТА С ФАЙЛОМ ROBOTS.TXT
-https://pixelplus.ru/samostoyatelno/stati/indeksatsiya/kak-zakryt-sayt-ot-indeksatsii.html
-
