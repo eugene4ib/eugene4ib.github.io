@@ -6,12 +6,18 @@
             font-size: 0.9em;
         }
     </style>
-    <meta charset="UTF-8">    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+<audio autoplay="1" preload="none" controls="controls" style="width:100%;">
+    <source id="source" type="audio/mpeg" src="https://traffic.libsyn.com/secure/happyenglishny/605_-_Snow_Idioms.mp3?_=1" />
+</audio>
+<br/>
+<div id="title"></div>
 Search: <input class="ffont" id="search" type="text" />
 <br/><br/>
 <div id="div" class="ffont"></div>
@@ -23,8 +29,8 @@ Search: <input class="ffont" id="search" type="text" />
 </body>
 <script>
     var arr = [
-        ["01 - Introduction & A Cup Of Joe", "https://www.myhappyenglish.com/?powerpress_pinw=6749-podcast", "https://www.myhappyenglish.com/episode-01-introduction-a-cup-of-joe/", "6749"],
-        ["02 - So vs. Such - Learn the Difference","https://www.myhappyenglish.com/episode-02-so-vs-such-confusing-words/"],
+        ["01 - Introduction & A Cup Of Joe","https://www.myhappyenglish.com/episode-01-introduction-a-cup-of-joe/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_01_A_Cup_of_Joe.mp3?_=1"],
+        ["02 - So vs. Such - Learn the Difference","https://www.myhappyenglish.com/episode-02-so-vs-such-confusing-words/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_02_So_Such.mp3?_=1"],
         ["03 - Pronunciation of the /ər/ Sound","https://www.myhappyenglish.com/episode-03-pronunciation-of-the-%c9%99r-sound/"],
         ["04 - Fun vs Funny, and a funny joke!","https://www.myhappyenglish.com/episode-04-fun-vs-funny-and-a-funny-joke/"],
         ["05 - Social Vocabulary","https://www.myhappyenglish.com/episode-05-social-vocabulary/"],
@@ -51,42 +57,42 @@ Search: <input class="ffont" id="search" type="text" />
         ["26 - Bored vs Boring - Participle Adjectives Lesson","https://www.myhappyenglish.com/episode-26-bored-vs-boring-participle-adjectives-lesson/"],
         ["27 - S vs SH Pronunciation in English Lesson","https://www.myhappyenglish.com/episode-27-s-vs-sh-pronunciation-in-english/"],
         ["28 - Phrasal Verbs With Get - English Lesson","https://www.myhappyenglish.com/episode-28-phrasal-verbs-with-get/"],
-        ["29 - Four Idioms & Slang Phrases With Blow Lesson","https://www.myhappyenglish.com/episode-29-four-idioms-slang-expressions-with-blow/"],
-        ["30 - Phrasal Verb Turn Up - English Lesson","https://www.myhappyenglish.com/episode-30-phrasal-verb-turn-up/"],
-        ["31 - Imagine, Image, & Imagination - Confusing English Words","https://www.myhappyenglish.com/episode-31-imagine-image-imagination-confusing-english-words/"],
-        ["32 - Should vs. Had Better - English Grammar Lesson","https://www.myhappyenglish.com/episode-32-should-vs-had-better-english-grammar-lesson/"],
-        ["33 - Four Money Related Idioms Using Make","https://www.myhappyenglish.com/episode-33-four-money-related-idioms-using-make/"],
-        ["34 - Ain\u2019t Ain\u2019t A Word! English Slang Words Lesson","https://www.myhappyenglish.com/episode-34-aint-aint-a-word-english-slang-words/"],
-        ["35 - Prepositions With WORK - English Grammar Lesson","https://www.myhappyenglish.com/episode-35-prepositions-with-work-english-grammar-lesson/"],
-        ["36 - Five Idioms with LIKE and Animals Lesson","https://www.myhappyenglish.com/episode-36-five-idioms-with-like-and-animals/"],
-        ["37 - Work vs Job - Confusing Vocabulary English Lesson","https://www.myhappyenglish.com/episode-37-work-vs-job-confusing-vocabulary-english-lesson/"],
-        ["38 - How To Use MOVE - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-38-how-to-use-move-english-vocabulary-lesson/"],
-        ["39 - TH Pronunciation - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-39-th-pronunciation-english-pronunciation-lesson/"],
-        ["40 - Using MEAN - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-40-using-mean/"],
-        ["41 - Slang & Idioms About Drinking Alcohol Lesson","https://www.myhappyenglish.com/episode-41-slang-idioms-about-drinking-alcohol/"],
-        ["42 - Four Ways To Use Enough - English Grammar Lesson","https://www.myhappyenglish.com/episode-42-four-ways-to-use-enough-english-grammar-lesson/"],
-        ["43 - Using GONNA - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-43-using-gonna-english-pronunciation-lesson/"],
-        ["44 - Cloth, Clothes, & Wear - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/episode-44-cloth-clothes-wear-confusing-english-vocabulary-lesson/"],
-        ["45 - How to Use Put On, Take Off, & Wear - English Vocabulary Lesson","https://www.myhappyenglish.com/45-how-to-use-put-on-take-off-wear-english-vocabulary-lesson/"],
-        ["46 - Even Though vs. Even If - English Grammar Lesson","https://www.myhappyenglish.com/46-even-though-vs-even-if-english-grammar-lesson/"],
-        ["47 - Hot Weather Idioms & Slang - English Vocabulary Lesson","https://www.myhappyenglish.com/47-hot-weather-idioms-slang-english-vocabulary-lesson/"],
-        ["48 - Sleep Verbs! Learn How To Talk About Sleep! - English Vocabulary Lesson","https://www.myhappyenglish.com/48-sleep-verbs-learn-how-to-talk-about-sleep-english-vocabulary-lesson/"],
-        ["49 - Finally vs. The End - Confusing English Words Lesson","https://www.myhappyenglish.com/49-finally-vs-the-end-confusing-english-words-lesson/"],
-        ["50 - Adverbs of Frequency - English Grammar Lesson","https://www.myhappyenglish.com/50-adverbs-of-frequency-english-grammar-lesson/"],
-        ["51 - Using \u201cStuff\u201d - English Vocabulary Lesson","https://www.myhappyenglish.com/51-using-stuff-english-vocabulary-lesson/"],
-        ["52 - Expect vs Hope - Confusing English Words Lesson","https://www.myhappyenglish.com/52-expect-vs-hope-confusing-english-words-lesson/"],
-        ["53 - Like vs As - English Grammar Lesson","https://www.myhappyenglish.com/53-like-vs-as-english-grammar-lesson/"],
-        ["54 - Besides vs Except - Confusing English Word Lesson","https://www.myhappyenglish.com/54-besides-vs-except-confusing-english-word-lesson/"],
-        ["55 - Phrasal Verbs with Call - English Vocabulary Lesson","https://www.myhappyenglish.com/55-phrasal-verbs-with-call-english-vocabulary-lesson/"],
-        ["56 - Celebrate vs Congratulate - Confusing English Words Lesson","https://www.myhappyenglish.com/56-celebrate-vs-congratulate-confusing-english-words-lesson/"],
-        ["57 - During vs. While - Confusing English Words Lesson","https://www.myhappyenglish.com/57-during-vs-while-confusing-english-words-lesson/"],
-        ["58 - Early, Fast, & Quickly - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/58-early-fast-quickly-confusing-english-vocabulary-lesson/"],
-        ["59 - Gerunds & Participles - English Grammar Lesson","https://www.myhappyenglish.com/59-gerunds-participles-english-grammar-lesson/"],
-        ["60 - Using Know How to Talk About Ability","https://www.myhappyenglish.com/60-using-know-how-to-talk-about-ability/"],
-        ["61 - Care vs Worry - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/61-care-vs-worry-confusing-english-vocabulary-lesson/"],
-        ["62 - 7 Romantic Idioms - English Idiom Lesson","https://www.myhappyenglish.com/62-7-romantic-idioms-english-idiom-lesson/"],
-        ["63 - Lay vs Lie - Confusing English Words Lesson","https://www.myhappyenglish.com/63-lay-vs-lie-confusing-english-words-lesson/"],
-        ["64 - Turn Out Phrasal Verb English Lesson","https://www.myhappyenglish.com/64-turn-out-phrasal-verb-english-lesson/"],
+        ["29 - Four Idioms & Slang Phrases With Blow Lesson","https://www.myhappyenglish.com/episode-29-four-idioms-slang-expressions-with-blow/","20211223204157"],
+        ["30 - Phrasal Verb Turn Up - English Lesson","https://www.myhappyenglish.com/episode-30-phrasal-verb-turn-up/","20211223204208"],
+        ["31 - Imagine, Image, & Imagination - Confusing English Words","https://www.myhappyenglish.com/episode-31-imagine-image-imagination-confusing-english-words/","20211223204214"],
+        ["32 - Should vs. Had Better - English Grammar Lesson","https://www.myhappyenglish.com/episode-32-should-vs-had-better-english-grammar-lesson/","20211223204229"],
+        ["33 - Four Money Related Idioms Using Make","https://www.myhappyenglish.com/episode-33-four-money-related-idioms-using-make/","20211223204243"],
+        ["34 - Ain\u2019t Ain\u2019t A Word! English Slang Words Lesson","https://www.myhappyenglish.com/episode-34-aint-aint-a-word-english-slang-words/","20211223204310"],
+        ["35 - Prepositions With WORK - English Grammar Lesson","https://www.myhappyenglish.com/episode-35-prepositions-with-work-english-grammar-lesson/","20211223204315"],
+        ["36 - Five Idioms with LIKE and Animals Lesson","https://www.myhappyenglish.com/episode-36-five-idioms-with-like-and-animals/","20211223204321"],
+        ["37 - Work vs Job - Confusing Vocabulary English Lesson","https://www.myhappyenglish.com/episode-37-work-vs-job-confusing-vocabulary-english-lesson/","20211223204336"],
+        ["38 - How To Use MOVE - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-38-how-to-use-move-english-vocabulary-lesson/","20211223204347"],
+        ["39 - TH Pronunciation - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-39-th-pronunciation-english-pronunciation-lesson/","20211223204352"],
+        ["40 - Using MEAN - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-40-using-mean/","20211223204357"],
+        ["41 - Slang & Idioms About Drinking Alcohol Lesson","https://www.myhappyenglish.com/episode-41-slang-idioms-about-drinking-alcohol/","20211223204411"],
+        ["42 - Four Ways To Use Enough - English Grammar Lesson","https://www.myhappyenglish.com/episode-42-four-ways-to-use-enough-english-grammar-lesson/","20211223204424"],
+        ["43 - Using GONNA - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-43-using-gonna-english-pronunciation-lesson/","20211223204440"],
+        ["44 - Cloth, Clothes, & Wear - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/episode-44-cloth-clothes-wear-confusing-english-vocabulary-lesson/","20211223204453"],
+        ["45 - How to Use Put On, Take Off, & Wear - English Vocabulary Lesson","https://www.myhappyenglish.com/45-how-to-use-put-on-take-off-wear-english-vocabulary-lesson/","20211223204507"],
+        ["46 - Even Though vs. Even If - English Grammar Lesson","https://www.myhappyenglish.com/46-even-though-vs-even-if-english-grammar-lesson/","20211223204525"],
+        ["47 - Hot Weather Idioms & Slang - English Vocabulary Lesson","https://www.myhappyenglish.com/47-hot-weather-idioms-slang-english-vocabulary-lesson/","20211223204540"],
+        ["48 - Sleep Verbs! Learn How To Talk About Sleep! - English Vocabulary Lesson","https://www.myhappyenglish.com/48-sleep-verbs-learn-how-to-talk-about-sleep-english-vocabulary-lesson/","20211223204546"],
+        ["49 - Finally vs. The End - Confusing English Words Lesson","https://www.myhappyenglish.com/49-finally-vs-the-end-confusing-english-words-lesson/","20211223204558"],
+        ["50 - Adverbs of Frequency - English Grammar Lesson","https://www.myhappyenglish.com/50-adverbs-of-frequency-english-grammar-lesson/","20211223204609"],
+        ["51 - Using \u201cStuff\u201d - English Vocabulary Lesson","https://www.myhappyenglish.com/51-using-stuff-english-vocabulary-lesson/","20211223204623"],
+        ["52 - Expect vs Hope - Confusing English Words Lesson","https://www.myhappyenglish.com/52-expect-vs-hope-confusing-english-words-lesson/","20211223204637"],
+        ["53 - Like vs As - English Grammar Lesson","https://www.myhappyenglish.com/53-like-vs-as-english-grammar-lesson/","20211223204650"],
+        ["54 - Besides vs Except - Confusing English Word Lesson","https://www.myhappyenglish.com/54-besides-vs-except-confusing-english-word-lesson/","20211223204723"],
+        ["55 - Phrasal Verbs with Call - English Vocabulary Lesson","https://www.myhappyenglish.com/55-phrasal-verbs-with-call-english-vocabulary-lesson/","20211223204736"],
+        ["56 - Celebrate vs Congratulate - Confusing English Words Lesson","https://www.myhappyenglish.com/56-celebrate-vs-congratulate-confusing-english-words-lesson/","20211223204743"],
+        ["57 - During vs. While - Confusing English Words Lesson","https://www.myhappyenglish.com/57-during-vs-while-confusing-english-words-lesson/","20211223204755"],
+        ["58 - Early, Fast, & Quickly - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/58-early-fast-quickly-confusing-english-vocabulary-lesson/","20211223204814"],
+        ["59 - Gerunds & Participles - English Grammar Lesson","https://www.myhappyenglish.com/59-gerunds-participles-english-grammar-lesson/","20211223204820"],
+        ["60 - Using Know How to Talk About Ability","https://www.myhappyenglish.com/60-using-know-how-to-talk-about-ability/","20211223204834"],
+        ["61 - Care vs Worry - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/61-care-vs-worry-confusing-english-vocabulary-lesson/","20211223204845"],
+        ["62 - 7 Romantic Idioms - English Idiom Lesson","https://www.myhappyenglish.com/62-7-romantic-idioms-english-idiom-lesson/","20211223204901"],
+        ["63 - Lay vs Lie - Confusing English Words Lesson","https://www.myhappyenglish.com/63-lay-vs-lie-confusing-english-words-lesson/","20211223204914"],
+        ["64 - Turn Out Phrasal Verb English Lesson","https://www.myhappyenglish.com/64-turn-out-phrasal-verb-english-lesson/","20211223204926"],
         ["65 - Using IT - English Pronoun Lesson","https://www.myhappyenglish.com/65-using-it-english-pronoun-lesson/","20211223204932"],
         ["66 - Apologizing in English - Language & Culture Lesson","https://www.myhappyenglish.com/66-apologizing-in-english-language-culture-lesson/","20211223204949"],
         ["67 - Study vs Learn - Confusing English Words Lesson","https://www.myhappyenglish.com/67-study-vs-learn-confusing-english-words-lesson/","20211223205002"],
@@ -642,7 +648,14 @@ Search: <input class="ffont" id="search" type="text" />
 
     var div = $("#div");
     var search = $("#search");
+    var divTitle = $("#title");
+    var source = $("#source");
     search.focus();
+
+    function clickOnLink(title, mp3) {
+        divTitle.html(title);
+        source.attr('src', mp3);
+    }
 
     search.on( "keyup", function(event) {
         if (event.keyCode == 27) {
@@ -656,7 +669,7 @@ Search: <input class="ffont" id="search" type="text" />
             if (search.val() != '') {
                 for (var i = 0; i < arr.length; i++) {
                     if (arr[i][0].toLowerCase().includes($(this).val().toLowerCase())) {
-                        var a = '<a target="_blank" href="' + arr[i][1] + '">' + arr[i][0] + '</a><br/>';
+                        var a = '<div target="_blank" onclick="clickOnLink(\'' + arr[i][0] + '\',\'' + arr[i][2] + '\');" href="' + arr[i][1] + '">' + arr[i][0] + '</div><br/>';
                         div.append(a);
                     }
                 }
