@@ -13,9 +13,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-<audio autoplay="1" preload="none" controls="controls" style="width:100%;">
-    <source id="source" type="audio/mpeg" src="https://traffic.libsyn.com/secure/happyenglishny/605_-_Snow_Idioms.mp3?_=1" />
-</audio>
+<div id="audio">
+    <audio autoplay="1" preload="none" controls="controls" style="width:100%;">
+        <source id="source" type="audio/mpeg" src="https://traffic.libsyn.com/secure/happyenglishny/605_-_Snow_Idioms.mp3?_=1" />
+    </audio>
+</div>
 <br/>
 <div id="title"></div>
 Search: <input class="ffont" id="search" type="text" />
@@ -649,12 +651,16 @@ Search: <input class="ffont" id="search" type="text" />
     var div = $("#div");
     var search = $("#search");
     var divTitle = $("#title");
+    var divAudio = $("#audio");
     var source = $("#source");
     search.focus();
 
     function clickOnLink(title, mp3) {
         divTitle.html(title);
         source.attr('src', mp3);
+        divAudio.html('<audio autoplay="1" preload="none" controls="controls" style="width:100%;">\n' +
+            '            <source id="source" type="audio/mpeg" src="' + mp3 + '" />\n' +
+            '        </audio>');
     }
 
     search.on( "keyup", function(event) {
