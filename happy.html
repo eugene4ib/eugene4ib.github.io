@@ -677,14 +677,14 @@ Search: <input class="ffont" id="search" type="text" />
             console.log(event.keyCode);
             // div.append("<div>123</div>");
 
-            if (search.val() != '') {
+            //if (search.val() != '') {
                 for (var i = 0; i < arr.length; i++) {
                     if (arr[i][0].toLowerCase().includes($(this).val().toLowerCase())) {
                         var a = '<div target="_blank" onclick="clickOnLink(\'' + arr[i][0] + '\',\'' + arr[i][1] + '\',\'' + arr[i][2] + '\');" href="' + arr[i][1] + '">' + arr[i][0] + '</div><br/>';
                         div.append(a);
                     }
                 }
-            }
+            //}
         }
     });
 
