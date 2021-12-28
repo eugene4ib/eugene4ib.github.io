@@ -660,10 +660,10 @@ Search: <input class="ffont" id="search" type="text" />
     console.log('--clickOnLink');
 
         source.attr('src', mp3);
-        divAudio.html('<audio preload="none" controls="controls" style="width:100%;">\n' + //autoplay="1"
+        divAudio.html('<div id="title">' + '<b><a target="_blank" href="' + url + '">' + title + '</a></b>' + '</div>' +
+            '<audio preload="none" controls="controls" style="width:100%;">\n' + //autoplay="1"
             '            <source id="source" type="audio/mpeg" src="' + mp3 + '" />\n' +
-            '        </audio>' +
-            '<div id="title">' + '<b><a target="_blank" href="' + url + '">' + title + '</a></b>' + '</div>');
+            '        </audio>');
         //divTitle.html('<a target="_blank" href="' + url + '">' + title + '</a>');
         window.scrollTo(0, 0);
     }
