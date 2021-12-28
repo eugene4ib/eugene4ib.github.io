@@ -14,12 +14,13 @@
 </head>
 <body>
 <div id="audio">
-    <audio autoplay="1" preload="none" controls="controls" style="width:100%;">
+    <audio preload="none" controls="controls" style="width:100%;"> <!-- autoplay="1"  -->
         <source id="source" type="audio/mpeg" src="https://traffic.libsyn.com/secure/happyenglishny/605_-_Snow_Idioms.mp3?_=1" />
     </audio>
+    <div id="title"></div>
 </div>
 <br/>
-<div id="title"></div>
+
 Search: <input class="ffont" id="search" type="text" />
 <br/><br/>
 <div id="div" class="ffont"></div>
@@ -33,56 +34,56 @@ Search: <input class="ffont" id="search" type="text" />
     var arr = [
         ["01 - Introduction & A Cup Of Joe","https://www.myhappyenglish.com/episode-01-introduction-a-cup-of-joe/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_01_A_Cup_of_Joe.mp3?_=1"],
         ["02 - So vs. Such - Learn the Difference","https://www.myhappyenglish.com/episode-02-so-vs-such-confusing-words/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_02_So_Such.mp3?_=1"],
-        ["03 - Pronunciation of the /ər/ Sound","https://www.myhappyenglish.com/episode-03-pronunciation-of-the-%c9%99r-sound/"],
-        ["04 - Fun vs Funny, and a funny joke!","https://www.myhappyenglish.com/episode-04-fun-vs-funny-and-a-funny-joke/"],
-        ["05 - Social Vocabulary","https://www.myhappyenglish.com/episode-05-social-vocabulary/"],
-        ["06 - Dressed To Kill - An English Idiom","https://www.myhappyenglish.com/episode-06-dressed-to-kill-an-english-idiom/"],
-        ["07 - Find vs. Find out","https://www.myhappyenglish.com/episode-07-find-vs-find-out-happy-english-podcast/"],
-        ["08 - Hell is a Bad Word? Heck Yes!","https://www.myhappyenglish.com/episode-08-hell-is-a-bad-word-heck-yes/"],
-        ["09 - Tag Questions","https://www.myhappyenglish.com/episode-09-tag-questions-learn-english-podcast/"],
-        ["10 - Using After","https://www.myhappyenglish.com/episode-10-using-after-learn-english-podcast/"],
-        ["11 - Talking about Age in English","https://www.myhappyenglish.com/episode-11-talking-about-age-in-english/"],
-        ["12 - A Pain In The Neck - English Idiom Lesson","https://www.myhappyenglish.com/episode-12-a-pain-in-the-neck-english-idiom-lesson/"],
-        ["13 - Alive, Live, Dead, & Died - Confusing English Words","https://www.myhappyenglish.com/episode-13-alive-live-dead-died-confusing-english-words/"],
-        ["14 - Using Almost - English Grammar Lesson","https://www.myhappyenglish.com/episode-14-using-almost-english-grammar-lesson/"],
-        ["15 - Among vs Between - Confusing English Words","https://www.myhappyenglish.com/episode-15-among-vs-between-confusing-english-words/"],
-        ["16 - Do You Mind? How To Ask & Answer!","https://www.myhappyenglish.com/episode-16-do-you-mind-how-to-ask-answer/"],
-        ["17 - 4 Ways To Use The Word Barbecue","https://www.myhappyenglish.com/episode-17-4-ways-to-use-the-word-barbecue/"],
-        ["18 - How To Pronounce \u201cOf\u201d - American English Pronunciation Lesson","https://www.myhappyenglish.com/episode-18-how-to-pronounce-of-american-english-pronunciation-lesson/"],
-        ["19 - A Piece Of Cake - English Idioms Lesson","https://www.myhappyenglish.com/episode-19-a-piece-of-cake-english-idioms-lesson-2/"],
-        ["20 - Bring vs. Take - Confusing English Words","https://www.myhappyenglish.com/episode-20-bring-vs-take-confusing-english-words/"],
-        ["21 - Borrow vs Lend - Confusing English Words","https://www.myhappyenglish.com/episode-21-borrow-vs-lend-confusing-english-words/"],
-        ["22 - Time Phrases & Prepositions - English Grammar Lesson","https://www.myhappyenglish.com/episode-22-time-phrases-prepositions-english-grammar-lesson/"],
-        ["23 - Pig Out & Bring Home The Bacon - Idiom Lesson","https://www.myhappyenglish.com/episode-23-pig-out-bring-home-the-bacon-idiom-lesson/"],
-        ["24 - Using Play, Do, & Go To Talk About Sports Lesson","https://www.myhappyenglish.com/episode-24-using-play-do-go-to-talk-about-sports/"],
-        ["25 - Still vs Yet - English Grammar Lesson","https://www.myhappyenglish.com/episode-25-still-vs-yet-english-grammar-lesson/"],
-        ["26 - Bored vs Boring - Participle Adjectives Lesson","https://www.myhappyenglish.com/episode-26-bored-vs-boring-participle-adjectives-lesson/"],
-        ["27 - S vs SH Pronunciation in English Lesson","https://www.myhappyenglish.com/episode-27-s-vs-sh-pronunciation-in-english/"],
-        ["28 - Phrasal Verbs With Get - English Lesson","https://www.myhappyenglish.com/episode-28-phrasal-verbs-with-get/"],
-        ["29 - Four Idioms & Slang Phrases With Blow Lesson","https://www.myhappyenglish.com/episode-29-four-idioms-slang-expressions-with-blow/","20211223204157"],
-        ["30 - Phrasal Verb Turn Up - English Lesson","https://www.myhappyenglish.com/episode-30-phrasal-verb-turn-up/","20211223204208"],
-        ["31 - Imagine, Image, & Imagination - Confusing English Words","https://www.myhappyenglish.com/episode-31-imagine-image-imagination-confusing-english-words/","20211223204214"],
-        ["32 - Should vs. Had Better - English Grammar Lesson","https://www.myhappyenglish.com/episode-32-should-vs-had-better-english-grammar-lesson/","20211223204229"],
-        ["33 - Four Money Related Idioms Using Make","https://www.myhappyenglish.com/episode-33-four-money-related-idioms-using-make/","20211223204243"],
-        ["34 - Ain\u2019t Ain\u2019t A Word! English Slang Words Lesson","https://www.myhappyenglish.com/episode-34-aint-aint-a-word-english-slang-words/","20211223204310"],
-        ["35 - Prepositions With WORK - English Grammar Lesson","https://www.myhappyenglish.com/episode-35-prepositions-with-work-english-grammar-lesson/","20211223204315"],
-        ["36 - Five Idioms with LIKE and Animals Lesson","https://www.myhappyenglish.com/episode-36-five-idioms-with-like-and-animals/","20211223204321"],
-        ["37 - Work vs Job - Confusing Vocabulary English Lesson","https://www.myhappyenglish.com/episode-37-work-vs-job-confusing-vocabulary-english-lesson/","20211223204336"],
-        ["38 - How To Use MOVE - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-38-how-to-use-move-english-vocabulary-lesson/","20211223204347"],
-        ["39 - TH Pronunciation - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-39-th-pronunciation-english-pronunciation-lesson/","20211223204352"],
-        ["40 - Using MEAN - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-40-using-mean/","20211223204357"],
-        ["41 - Slang & Idioms About Drinking Alcohol Lesson","https://www.myhappyenglish.com/episode-41-slang-idioms-about-drinking-alcohol/","20211223204411"],
-        ["42 - Four Ways To Use Enough - English Grammar Lesson","https://www.myhappyenglish.com/episode-42-four-ways-to-use-enough-english-grammar-lesson/","20211223204424"],
-        ["43 - Using GONNA - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-43-using-gonna-english-pronunciation-lesson/","20211223204440"],
-        ["44 - Cloth, Clothes, & Wear - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/episode-44-cloth-clothes-wear-confusing-english-vocabulary-lesson/","20211223204453"],
-        ["45 - How to Use Put On, Take Off, & Wear - English Vocabulary Lesson","https://www.myhappyenglish.com/45-how-to-use-put-on-take-off-wear-english-vocabulary-lesson/","20211223204507"],
-        ["46 - Even Though vs. Even If - English Grammar Lesson","https://www.myhappyenglish.com/46-even-though-vs-even-if-english-grammar-lesson/","20211223204525"],
-        ["47 - Hot Weather Idioms & Slang - English Vocabulary Lesson","https://www.myhappyenglish.com/47-hot-weather-idioms-slang-english-vocabulary-lesson/","20211223204540"],
-        ["48 - Sleep Verbs! Learn How To Talk About Sleep! - English Vocabulary Lesson","https://www.myhappyenglish.com/48-sleep-verbs-learn-how-to-talk-about-sleep-english-vocabulary-lesson/","20211223204546"],
-        ["49 - Finally vs. The End - Confusing English Words Lesson","https://www.myhappyenglish.com/49-finally-vs-the-end-confusing-english-words-lesson/","20211223204558"],
-        ["50 - Adverbs of Frequency - English Grammar Lesson","https://www.myhappyenglish.com/50-adverbs-of-frequency-english-grammar-lesson/","20211223204609"],
-        ["51 - Using \u201cStuff\u201d - English Vocabulary Lesson","https://www.myhappyenglish.com/51-using-stuff-english-vocabulary-lesson/","20211223204623"],
-        ["52 - Expect vs Hope - Confusing English Words Lesson","https://www.myhappyenglish.com/52-expect-vs-hope-confusing-english-words-lesson/","20211223204637"],
+        ["03 - Pronunciation of the /ər/ Sound","https://www.myhappyenglish.com/episode-03-pronunciation-of-the-%c9%99r-sound/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_03_er_pronunciatiton.mp3?_=1"],
+        ["04 - Fun vs Funny, and a funny joke!","https://www.myhappyenglish.com/episode-04-fun-vs-funny-and-a-funny-joke/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_04__Fun_vs_Funny.mp3?_=1"],
+        ["05 - Social Vocabulary","https://www.myhappyenglish.com/episode-05-social-vocabulary/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_05_Social_Vocabulary.mp3?_=1"],
+        ["06 - Dressed To Kill - An English Idiom","https://www.myhappyenglish.com/episode-06-dressed-to-kill-an-english-idiom/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_06_Dressed_to_Kill.mp3?_=1"],
+        ["07 - Find vs. Find out","https://www.myhappyenglish.com/episode-07-find-vs-find-out-happy-english-podcast/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_07_Find_vs_Find_out.mp3?_=1"],
+        ["08 - Hell is a Bad Word? Heck Yes!","https://www.myhappyenglish.com/episode-08-hell-is-a-bad-word-heck-yes/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_08_Bad_words_Hell.mp3?_=1"],
+        ["09 - Tag Questions","https://www.myhappyenglish.com/episode-09-tag-questions-learn-english-podcast/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_09_Tag_Questions.mp3?_=1"],
+        ["10 - Using After","https://www.myhappyenglish.com/episode-10-using-after-learn-english-podcast/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_10_Using_After.mp3?_=1"],
+        ["11 - Talking about Age in English","https://www.myhappyenglish.com/episode-11-talking-about-age-in-english/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_11_Tallking_about_age.mp3?_=1"],
+        ["12 - A Pain In The Neck - English Idiom Lesson","https://www.myhappyenglish.com/episode-12-a-pain-in-the-neck-english-idiom-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_12_A_Pain_In_The_Neck.mp3?_=1"],
+        ["13 - Alive, Live, Dead, & Died - Confusing English Words","https://www.myhappyenglish.com/episode-13-alive-live-dead-died-confusing-english-words/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_13_Alive_Live_Dead_Died.mp3?_=1"],
+        ["14 - Using Almost - English Grammar Lesson","https://www.myhappyenglish.com/episode-14-using-almost-english-grammar-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_14_Using_Almost.mp3?_=1"],
+        ["15 - Among vs Between - Confusing English Words","https://www.myhappyenglish.com/episode-15-among-vs-between-confusing-english-words/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_15_Among_vs_Between.mp3?_=1"],
+        ["16 - Do You Mind? How To Ask & Answer!","https://www.myhappyenglish.com/episode-16-do-you-mind-how-to-ask-answer/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_16_Do_You_Mind.mp3?_=1"],
+        ["17 - 4 Ways To Use The Word Barbecue","https://www.myhappyenglish.com/episode-17-4-ways-to-use-the-word-barbecue/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_17_4_Ways_To_Use_The_Word_Barbecue.mp3?_=1"],
+        ["18 - How To Pronounce \u201cOf\u201d - American English Pronunciation Lesson","https://www.myhappyenglish.com/episode-18-how-to-pronounce-of-american-english-pronunciation-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_18_How_To_Pronounce_OF.mp3?_=1"],
+        ["19 - A Piece Of Cake - English Idioms Lesson","https://www.myhappyenglish.com/episode-19-a-piece-of-cake-english-idioms-lesson-2/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_19_A_Piece_Of_Cake.mp3?_=1"],
+        ["20 - Bring vs. Take - Confusing English Words","https://www.myhappyenglish.com/episode-20-bring-vs-take-confusing-english-words/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_20_Bring_vs_Take.mp3?_=1"],
+        ["21 - Borrow vs Lend - Confusing English Words","https://www.myhappyenglish.com/episode-21-borrow-vs-lend-confusing-english-words/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_21_Borrow_and_Lend.mp3?_=1"],
+        ["22 - Time Phrases & Prepositions - English Grammar Lesson","https://www.myhappyenglish.com/episode-22-time-phrases-prepositions-english-grammar-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_22_Time_Phrases_And_Prepositions-2.mp3?_=1"],
+        ["23 - Pig Out & Bring Home The Bacon - Idiom Lesson","https://www.myhappyenglish.com/episode-23-pig-out-bring-home-the-bacon-idiom-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_23_Pig_Out_Bring_Home_The_Bacon2.mp3?_=1"],
+        ["24 - Using Play, Do, & Go To Talk About Sports Lesson","https://www.myhappyenglish.com/episode-24-using-play-do-go-to-talk-about-sports/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_24_Using_Play_Do__and_Go_to_Talk_About_Sports.mp3?_=1"],
+        ["25 - Still vs Yet - English Grammar Lesson","https://www.myhappyenglish.com/episode-25-still-vs-yet-english-grammar-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_25_Still_vs_Yet.mp3?_=1"],
+        ["26 - Bored vs Boring - Participle Adjectives Lesson","https://www.myhappyenglish.com/episode-26-bored-vs-boring-participle-adjectives-lesson/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_26_Bored_vs_Boring.mp3?_=1"],
+        ["27 - S vs SH Pronunciation in English Lesson","https://www.myhappyenglish.com/episode-27-s-vs-sh-pronunciation-in-english/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_27_S_vs_SH_Pronunciation.mp3?_=1"],
+        ["28 - Phrasal Verbs With Get - English Lesson","https://www.myhappyenglish.com/episode-28-phrasal-verbs-with-get/", "http://traffic.libsyn.com/happyenglishny/Podcast_Number_28_Phrasal_Verbs_With_Get.mp3?_=1"],
+        ["29 - Four Idioms & Slang Phrases With Blow Lesson","https://www.myhappyenglish.com/episode-29-four-idioms-slang-expressions-with-blow/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_29_Idioms__Slang_Using_Blow.mp3?_=1"],
+        ["30 - Phrasal Verb Turn Up - English Lesson","https://www.myhappyenglish.com/episode-30-phrasal-verb-turn-up/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_30_Phrasal_verb_turn_up.mp3?_=1"],
+        ["31 - Imagine, Image, & Imagination - Confusing English Words","https://www.myhappyenglish.com/episode-31-imagine-image-imagination-confusing-english-words/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_31_Image_Imagination_imagine.mp3?_=1"],
+        ["32 - Should vs. Had Better - English Grammar Lesson","https://www.myhappyenglish.com/episode-32-should-vs-had-better-english-grammar-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_32_Should_vs_Had_Better.mp3?_=1"],
+        ["33 - Four Money Related Idioms Using Make","https://www.myhappyenglish.com/episode-33-four-money-related-idioms-using-make/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_33_4_Money_Related_Idioms_with_Make.mp3?_=1"],
+        ["34 - Ain\u2019t Ain\u2019t A Word! English Slang Words Lesson","https://www.myhappyenglish.com/episode-34-aint-aint-a-word-english-slang-words/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_34_Aint_Aint_A_Word.mp3?_=1"],
+        ["35 - Prepositions With WORK - English Grammar Lesson","https://www.myhappyenglish.com/episode-35-prepositions-with-work-english-grammar-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_35_Prepositions_with_WORK.mp3?_=1"],
+        ["36 - Five Idioms with LIKE and Animals Lesson","https://www.myhappyenglish.com/episode-36-five-idioms-with-like-and-animals/","http://traffic.libsyn.com/happyenglishny/Podcast_Episode_36_Five_Animal_Idioms_With_Like.mp3?_=1"],
+        ["37 - Work vs Job - Confusing Vocabulary English Lesson","https://www.myhappyenglish.com/episode-37-work-vs-job-confusing-vocabulary-english-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_37_Work_vs_Job.mp3?_=1"],
+        ["38 - How To Use MOVE - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-38-how-to-use-move-english-vocabulary-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Episode_38_Using_Move.mp3?_=1"],
+        ["39 - TH Pronunciation - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-39-th-pronunciation-english-pronunciation-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_39_TH_Pronunciation.mp3?_=1"],
+        ["40 - Using MEAN - English Vocabulary Lesson","https://www.myhappyenglish.com/episode-40-using-mean/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_40_Using_Mean.mp3?_=1"],
+        ["41 - Slang & Idioms About Drinking Alcohol Lesson","https://www.myhappyenglish.com/episode-41-slang-idioms-about-drinking-alcohol/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_41_Drinking_Slang_And_Idioms.mp3?_=1"],
+        ["42 - Four Ways To Use Enough - English Grammar Lesson","https://www.myhappyenglish.com/episode-42-four-ways-to-use-enough-english-grammar-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_42_4_ways_to_use_Enough.mp3?_=1"],
+        ["43 - Using GONNA - English Pronunciation Lesson","https://www.myhappyenglish.com/episode-43-using-gonna-english-pronunciation-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_43_Using_Gonna.mp3?_=1"],
+        ["44 - Cloth, Clothes, & Wear - Confusing English Vocabulary Lesson","https://www.myhappyenglish.com/episode-44-cloth-clothes-wear-confusing-english-vocabulary-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_44__Cloth_Clothes_Wear.mp3?_=1"],
+        ["45 - How to Use Put On, Take Off, & Wear - English Vocabulary Lesson","https://www.myhappyenglish.com/45-how-to-use-put-on-take-off-wear-english-vocabulary-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_45_Put_on_Take_off_wear.mp3?_=1"],
+        ["46 - Even Though vs. Even If - English Grammar Lesson","https://www.myhappyenglish.com/46-even-though-vs-even-if-english-grammar-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_46_Even_though_Even_if.mp3?_=1"],
+        ["47 - Hot Weather Idioms & Slang - English Vocabulary Lesson","https://www.myhappyenglish.com/47-hot-weather-idioms-slang-english-vocabulary-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_47_Hot_Weather_Vocabulary.mp3?_=1"],
+        ["48 - Sleep Verbs! Learn How To Talk About Sleep! - English Vocabulary Lesson","https://www.myhappyenglish.com/48-sleep-verbs-learn-how-to-talk-about-sleep-english-vocabulary-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_48_Sleep_Vocabulary.mp3?_=1"],
+        ["49 - Finally vs. The End - Confusing English Words Lesson","https://www.myhappyenglish.com/49-finally-vs-the-end-confusing-english-words-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_49_Finally_and_the_end.mp3?_=1"],
+        ["50 - Adverbs of Frequency - English Grammar Lesson","https://www.myhappyenglish.com/50-adverbs-of-frequency-english-grammar-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_50_Adverbs_Of_Frequency.mp3?_=1"],
+        ["51 - Using \u201cStuff\u201d - English Vocabulary Lesson","https://www.myhappyenglish.com/51-using-stuff-english-vocabulary-lesson/","http://traffic.libsyn.com/happyenglishny/Podcast_Number_51_Stuff.mp3?_=1"],
+        ["52 - Expect vs Hope - Confusing English Words Lesson","https://www.myhappyenglish.com/52-expect-vs-hope-confusing-english-words-lesson/",""],
         ["53 - Like vs As - English Grammar Lesson","https://www.myhappyenglish.com/53-like-vs-as-english-grammar-lesson/","20211223204650"],
         ["54 - Besides vs Except - Confusing English Word Lesson","https://www.myhappyenglish.com/54-besides-vs-except-confusing-english-word-lesson/","20211223204723"],
         ["55 - Phrasal Verbs with Call - English Vocabulary Lesson","https://www.myhappyenglish.com/55-phrasal-verbs-with-call-english-vocabulary-lesson/","20211223204736"],
@@ -655,12 +656,16 @@ Search: <input class="ffont" id="search" type="text" />
     var source = $("#source");
     search.focus();
 
-    function clickOnLink(title, mp3) {
-        divTitle.html(title);
+    function clickOnLink(title, url, mp3) {
+    console.log('--clickOnLink');
+
         source.attr('src', mp3);
-        divAudio.html('<audio autoplay="1" preload="none" controls="controls" style="width:100%;">\n' +
+        divAudio.html('<audio preload="none" controls="controls" style="width:100%;">\n' + //autoplay="1"
             '            <source id="source" type="audio/mpeg" src="' + mp3 + '" />\n' +
-            '        </audio>');
+            '        </audio>' +
+            '<div id="title">' + '<a target="_blank" href="' + url + '">' + title + '</a>' + '</div>');
+        //divTitle.html('<a target="_blank" href="' + url + '">' + title + '</a>');
+        window.scrollTo(0, 0);
     }
 
     search.on( "keyup", function(event) {
@@ -675,7 +680,7 @@ Search: <input class="ffont" id="search" type="text" />
             if (search.val() != '') {
                 for (var i = 0; i < arr.length; i++) {
                     if (arr[i][0].toLowerCase().includes($(this).val().toLowerCase())) {
-                        var a = '<div target="_blank" onclick="clickOnLink(\'' + arr[i][0] + '\',\'' + arr[i][2] + '\');" href="' + arr[i][1] + '">' + arr[i][0] + '</div><br/>';
+                        var a = '<div target="_blank" onclick="clickOnLink(\'' + arr[i][0] + '\',\'' + arr[i][1] + '\',\'' + arr[i][2] + '\');" href="' + arr[i][1] + '">' + arr[i][0] + '</div><br/>';
                         div.append(a);
                     }
                 }
