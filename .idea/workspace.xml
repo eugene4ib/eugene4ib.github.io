@@ -22,17 +22,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="367f9a42-d87c-4efa-a90b-bb7593758129" name="Default Changelist" comment="">
+    <list default="true" id="367f9a42-d87c-4efa-a90b-bb7593758129" name="Default Changelist" comment="add happy - it's my english podcast">
+      <change afterPath="$PROJECT_DIR$/engsounds/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/happy.html" beforeDir="false" afterPath="$PROJECT_DIR$/happy.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -48,6 +67,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -68,6 +88,91 @@
       <updated>1604324405491</updated>
       <workItem from="1605871847979" duration="2584000" />
     </task>
+    <task id="LOCAL-00001" summary="add happy - it's my english podcast">
+      <created>1640528459548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640528459548</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add happy - it's my english podcast">
+      <created>1640528526010</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640528526010</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add happy - it's my english podcast">
+      <created>1640560637887</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640560637887</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add happy - it's my english podcast">
+      <created>1640561113126</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640561113126</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add happy - it's my english podcast">
+      <created>1640676388298</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640676388299</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add happy - it's my english podcast">
+      <created>1640676581881</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640676581881</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add happy - it's my english podcast">
+      <created>1640677023791</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640677023791</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add happy - it's my english podcast">
+      <created>1640677337632</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640677337632</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add happy - it's my english podcast">
+      <created>1640679453807</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640679453807</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add happy - it's my english podcast">
+      <created>1640679913906</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640679913906</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add happy - it's my english podcast">
+      <created>1640723591178</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1640723591178</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add happy - it's my english podcast">
+      <created>1640871438114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1640871438114</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,12 +194,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="632" y="74" width="1465" height="843" key="find.popup" timestamp="1604334684040">
-      <screen x="0" y="0" width="2560" height="1032" />
-    </state>
-    <state x="632" y="74" width="1465" height="843" key="find.popup/0.0.2560.1032@0.0.2560.1032" timestamp="1604334684040" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add happy - it's my english podcast" />
+    <option name="LAST_COMMIT_MESSAGE" value="add happy - it's my english podcast" />
   </component>
 </project>

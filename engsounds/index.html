@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .ffont {
+            font-size: 0.9em;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>English File Sounds</title>
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="audio">
+    <audio preload="none" controls="controls" style="width:100%;"> <!-- autoplay="1"  -->
+        <source id="source" type="audio/mpeg" src="ef3e_beg_05a_2-28.mp3" />
+    </audio>
+    <div id="title"></div>
+</div>
+<br/>
+
+Search: <input class="ffont" id="search" type="text" />
+<br/><br/>
+<div id="div" class="ffont"></div>
+
+<!--    <audio autoplay="1" preload="none" controls="controls">-->
+<!--        <source type="audio/mpeg" src="https://traffic.libsyn.com/secure/happyenglishny/605_-_Snow_Idioms.mp3?_=1" />-->
+<!--    </audio>-->
+
+</body>
+<script>
+    var arr = [
+    
+["ef3e_beg_05a_2-28.mp3","","ef3e_beg_05a_2-28.mp3"],
+["ef3e_beg_05a_2-30.mp3","","ef3e_beg_05a_2-30.mp3"],
+["ef3e_beg_05b_2-34.mp3","","ef3e_beg_05b_2-34.mp3"],
+["ef3e_beg_06a_2-53.mp3","","ef3e_beg_06a_2-53.mp3"],
+["ef3e_beg_06a_2-60.mp3","","ef3e_beg_06a_2-60.mp3"],
+["ef3e_beg_06b_2-63.mp3","","ef3e_beg_06b_2-63.mp3"],
+["ef3e_beg_06b_2-70.mp3","","ef3e_beg_06b_2-70.mp3"],
+["ef3e_beg_07a_3-02.mp3","","ef3e_beg_07a_3-02.mp3"],
+["ef3e_beg_07a_3-03.mp3","","ef3e_beg_07a_3-03.mp3"],
+["ef3e_beg_07a_3-04.mp3","","ef3e_beg_07a_3-04.mp3"],
+["ef3e_beg_07b_3-11.mp3","","ef3e_beg_07b_3-11.mp3"],
+["ef3e_beg_07b_3-18.mp3","","ef3e_beg_07b_3-18.mp3"],
+["ef3e_beg_08a_3-32.mp3","","ef3e_beg_08a_3-32.mp3"],
+["ef3e_beg_08a_3-33.mp3","","ef3e_beg_08a_3-33.mp3"],
+["ef3e_beg_08a_3-34.mp3","","ef3e_beg_08a_3-34.mp3"],
+["ef3e_beg_08b_3-43.mp3","","ef3e_beg_08b_3-43.mp3"],
+["ef3e_beg_09a_3-52.mp3","","ef3e_beg_09a_3-52.mp3"],
+["ef3e_beg_09a_3-53.mp3","","ef3e_beg_09a_3-53.mp3"],
+["ef3e_beg_09b_3-55.mp3","","ef3e_beg_09b_3-55.mp3"],
+["ef3e_beg_09b_3-57.mp3","","ef3e_beg_09b_3-57.mp3"],
+["ef3e_beg_09b_3-59.mp3","","ef3e_beg_09b_3-59.mp3"],
+["ef3e_beg_09b_3-61.mp3","","ef3e_beg_09b_3-61.mp3"],
+["ef3e_beg_10a_4.4.mp3","","ef3e_beg_10a_4.4.mp3"],
+["ef3e_beg_10b_4.12.mp3","","ef3e_beg_10b_4.12.mp3"],
+["ef3e_beg_10b_4.9.mp3","","ef3e_beg_10b_4.9.mp3"],
+["ef3e_beg_11a_4-18.mp3"],
+["ef3e_beg_11a_4-19.mp3"],
+["ef3e_beg_11a_4-23.mp3"],
+["ef3e_beg_11b_4-25.mp3"],
+["ef3e_beg_11b_4-29.mp3"],
+["ef3e_beg_12a_4-40.mp3"],
+["ef3e_beg_12a_4-41.mp3"],
+["ef3e_beg_12a_4-42.mp3"],
+["ef3e_beg_12a_4-43.mp3"],
+["ef3e_beg_12a_4-44.mp3"],
+["ef3e_beg_12b_4-52.mp3"],
+["ef3e_beg_12b_4-56.mp3"],
+["ef3e_beg_12b_4-57.mp3"],
+["ef3e_beg_12b_4-58.mp3"],
+["ef3e_beg_pe3_2-41.mp3"],
+["ef3e_beg_pe3_2-49.mp3"],
+["ef3e_beg_pe4_3-21.mp3"],
+["ef3e_beg_pe4_3-26.mp3"],
+["ef3e_beg_pe5_3-62.mp3"],
+["ef3e_beg_pe5_3-64.mp3"],
+["ef3e_beg_pe6_4-32.mp3"],
+["ef3e_beg_pe6_4-33.mp3"],
+["ef3e_beg_pe6_4-34.mp3"],
+["ef3e_beg_pe6_4-35.mp3"],
+["ef3e_beg_pe6_4-36.mp3"],
+["ef3e_beg_pe6_4-37.mp3"],
+["ef3e_beg_r&c_3-44.mp3"],
+["ef3e_beg_r&c_5_6.mp3"],
+["ef3e_beg_r&c_7_8.mp3"],
+["ef3e_beg_r&c_9_10.mp3"],
+["ef3e_beg_r&c_reading.mp3"],
+["ef3e_elem_01a_1-02.mp3"],
+["ef3e_elem_01a_1-13.mp3"],
+["ef3e_elem_01a_1-14.mp3"],
+["ef3e_elem_01b_1-29.mp3"],
+["ef3e_elem_02b_reading.mp3"],
+["ef3e_elem_02c_1-69.mp3"],
+["ef3e_elem_02c_1-70.mp3"],
+["ef3e_elem_03a_2-07.mp3"],
+["ef3e_elem_03a_reading.mp3"],
+["ef3e_elem_03b_2-10.mp3"],
+["ef3e_elem_03b_2-11.mp3"],
+["ef3e_elem_03b_2-12.mp3"],
+["ef3e_elem_03b_reading.mp3"],
+["ef3e_elem_03c_2-17.mp3"],
+["ef3e_elem_03c_2-18.mp3"],
+["ef3e_elem_03c_2-19.mp3"],
+["ef3e_elem_04a_2-35.mp3"],
+["ef3e_elem_04b_2-40.mp3"],
+["ef3e_elem_04b_reading.mp3"],
+["ef3e_elem_04c_2-47.mp3"],
+["ef3e_elem_04c_reading.mp3"],
+["ef3e_elem_05a_2-55.mp3"],
+["ef3e_elem_05a_2-57.mp3"],
+["ef3e_elem_05a_reading.mp3"],
+["ef3e_elem_05b_3-03.mp3"],
+["ef3e_elem_05b_3-07.mp3"],
+["ef3e_elem_05b_reading.mp3"],
+["ef3e_elem_05c_3-10.mp3"],
+["ef3e_elem_05c_3-11.mp3"],
+["ef3e_elem_05c_reading.mp3"],
+["ef3e_elem_06a_3-27.mp3"],
+["ef3e_elem_06a_3-28.mp3"],
+["ef3e_elem_06b_3-33.mp3"],
+["ef3e_elem_06c_reading.mp3"],
+["ef3e_elem_07a_3-43.mp3"],
+["ef3e_elem_07a_3-47.mp3"],
+["ef3e_elem_07a_reading.mp3"],
+["ef3e_elem_07b_3-50.mp3"],
+["ef3e_elem_07b_3-52.mp3"],
+["ef3e_elem_07b_reading.mp3"],
+["ef3e_elem_07c_reading.mp3"],
+["ef3e_elem_08a_4-02.mp3"],
+["ef3e_elem_08a_4-08.mp3"],
+["ef3e_elem_08a_4-09.mp3"],
+["ef3e_elem_08b_4-13.mp3"],
+["ef3e_elem_08b_4-14.mp3"],
+["ef3e_elem_08b_4-15.mp3"],
+["ef3e_elem_08c_4-24.mp3"],
+["ef3e_elem_08c_4-25.mp3"],
+["ef3e_elem_08c_reading.mp3"],
+["ef3e_elem_09a_4-32.mp3"],
+["ef3e_elem_09a_4-34.mp3"],
+["ef3e_elem_09a_reading.mp3"],
+["ef3e_elem_09b_reading.mp3"],
+["ef3e_elem_09c_4-42.mp3"],
+["ef3e_elem_09c_4-45.mp3"],
+["ef3e_elem_09c_4-46.mp3"],
+["ef3e_elem_09c_reading.mp3"],
+["ef3e_elem_10a_reading.mp3"],
+["ef3e_elem_10b_5-08.mp3"],
+["ef3e_elem_10b_5-09.mp3"],
+["ef3e_elem_10b_5-10.mp3"],
+["ef3e_elem_10b_reading.mp3"],
+["ef3e_elem_10c_5-14.mp3"],
+["ef3e_elem_10c_5-15.mp3"],
+["ef3e_elem_10c_5-16.mp3"],
+["ef3e_elem_10c_5-17.mp3"],
+["ef3e_elem_10c_5-18.mp3"],
+["ef3e_elem_11a_5-30.mp3"],
+["ef3e_elem_11a_reading.mp3"],
+["ef3e_elem_11b_reading.mp3"],
+["ef3e_elem_11c_5-36.mp3"],
+["ef3e_elem_12a_5-44.mp3"],
+["ef3e_elem_12a_5-49.mp3"],
+["ef3e_elem_12b_5-51.mp3"],
+["ef3e_elem_12c_reading.mp3"],
+["ef3e_elem_pe1_1-44.mp3"],
+["ef3e_elem_pe1_1-45.mp3"],
+["ef3e_elem_pe1_1-48.mp3"],
+["ef3e_elem_pe2_2-24.mp3"],
+["ef3e_elem_pe2_2-25.mp3"],
+["ef3e_elem_pe2_2-26.mp3"],
+["ef3e_elem_pe2_2-28.mp3"],
+["ef3e_elem_pe3_3-15.mp3"],
+["ef3e_elem_pe3_3-17.mp3"],
+["ef3e_elem_pe3_3-19.mp3"],
+["ef3e_elem_pe4_3-64.mp3"],
+["ef3e_elem_pe4_3-66.mp3"],
+["ef3e_elem_pe4_3-68.mp3"],
+["ef3e_elem_pe5_4-49.mp3"],
+["ef3e_elem_pe5_4-53.mp3"],
+["ef3e_elem_pe5_4-55.mp3"],
+["ef3e_elem_pe6_5-38.mp3"],
+["ef3e_elem_pe6_5-40.mp3"],
+["ef3e_elem_pe6_5-42.mp3"],
+["ef3e_elem_r&c11&12_reading.mp3"],
+["ef3e_elem_r&c1&2_reading.mp3"],
+["ef3e_elem_r&c_1-74.mp3"],
+["ef3e_elem_r&c_2-53.mp3"],
+["ef3e_elem_r&c3&4_reading.mp3"],
+["ef3e_elem_r&c_4-28.mp3"],
+["ef3e_elem_r&c_5-24.mp3"],
+["ef3e_elem_r&c_5-57.mp3"],
+["ef3e_elem_r&c5&6_reading.mp3"],
+["ef3e_elem_r&c7&8_reading.mp3"],
+["ef3e_p-int_01a_1-07.mp3"],
+["ef3e_p-int_01a_1-08.mp3"],
+["ef3e_p-int_01b_1-09.mp3"],
+["ef3e_p-int_01b_1-10.mp3"],
+["ef3e_p-int_01b_1-11.mp3"],
+["ef3e_p-int_01b_1-12.mp3"],
+["ef3e_p-int_01b_1-14.mp3"],
+["ef3e_p-int_01b_1-15.mp3"],
+["ef3e_p-int_01b_reading.mp3"],
+["ef3e_p-int_01c_1-24.mp3"],
+["ef3e_p-int_02a_1-35.mp3"],
+["ef3e_p-int_02a_reading_1.mp3"],
+["ef3e_p-int_02a_reading_2.mp3"],
+["ef3e_p-int_02b_1-39.mp3"],
+["ef3e_p-int_02b_1-44.mp3"],
+["ef3e_p-int_02b_reading.mp3"],
+["ef3e_p-int_02c_1-45.mp3"],
+["ef3e_p-int_02c_1-50.mp3"],
+["ef3e_p-int_02c_1-51.mp3"],
+["ef3e_p-int_02c_reading.mp3"],
+["ef3e_p-int_03a_1-55.mp3"],
+["ef3e_p-int_03a_reading.mp3"],
+["ef3e_p-int_03b_1-62.mp3"],
+["ef3e_p-int_03b_1-65.mp3"],
+["ef3e_p-int_03b_1-66.mp3"],
+["ef3e_p-int_03b_1-68.mp3"],
+["ef3e_p-int_03b_reading.mp3"],
+["ef3e_p-int_03c_2-02.mp3"],
+["ef3e_p-int_03c_2-03.mp3"],
+["ef3e_p-int_03c_2-04.mp3"],
+["ef3e_p-int_03c_reading.mp3"],
+["ef3e_p-int_04a_2-15.mp3"],
+["ef3e_p-int_04a_2-22.mp3"],
+["ef3e_p-int_04a_2-23.mp3"],
+["ef3e_p-int_04a_reading.mp3"],
+["ef3e_p-int_04b_2-26.mp3"],
+["ef3e_p-int_04b_2-27.mp3"],
+["ef3e_p-int_04b_2-29.mp3"],
+["ef3e_p-int_04b_reading.mp3"],
+["ef3e_p-int_04c_2-32.mp3"],
+["ef3e_p-int_04c_2-33.mp3"],
+["ef3e_p-int_04c_2-34.mp3"],
+["ef3e_p-int_04c_reading.mp3"],
+["ef3e_p-int_05a_2-42.mp3"],
+["ef3e_p-int_05a_reading.mp3"],
+["ef3e_p-int_05b_2-44.mp3"],
+["ef3e_p-int_05b_2-45.mp3"],
+["ef3e_p-int_05b_reading_1.mp3"],
+["ef3e_p-int_05b_reading_2.mp3"],
+["ef3e_p-int_05b_reading_3.mp3"],
+["ef3e_p-int_05b_reading_4.mp3"],
+["ef3e_p-int_05c_2-51.mp3"],
+["ef3e_p-int_05c_reading.mp3"],
+["ef3e_p-int_06a_3-08.mp3"],
+["ef3e_p-int_06a_3-09.mp3"],
+["ef3e_p-int_06a_reading.mp3"],
+["ef3e_p-int_06b_3-10.mp3"],
+["ef3e_p-int_06b_reading.mp3"],
+["ef3e_p-int_06c_3-16.mp3"],
+["ef3e_p-int_06c_3-17.mp3"],
+["ef3e_p-int_06c_3-18.mp3"],
+["ef3e_p-int_06c_reading.mp3"],
+["ef3e_p-int_07a_3-23.mp3"],
+["ef3e_p-int_07a_reading.mp3"],
+["ef3e_p-int_07b_3-28.mp3"],
+["ef3e_p-int_07b_3-32.mp3"],
+["ef3e_p-int_07b_reading.mp3"],
+["ef3e_p-int_07c_3-38.mp3"],
+["ef3e_p-int_07c_reading.mp3"],
+["ef3e_p-int_08a_3-51.mp3"],
+["ef3e_p-int_08a_3-52.mp3"],
+["ef3e_p-int_08a_3-53.mp3"],
+["ef3e_p-int_08a_3-54.mp3"],
+["ef3e_p-int_08a_3-55.mp3"],
+["ef3e_p-int_08a_reading.mp3"],
+["ef3e_p-int_08b_4-02.mp3"],
+["ef3e_p-int_08b_4-06.mp3"],
+["ef3e_p-int_08b_reading.mp3"],
+["ef3e_p-int_08c_4-07.mp3"],
+["ef3e_p-int_08c_4-08.mp3"],
+["ef3e_p-int_08c_4-10.mp3"],
+["ef3e_p-int_08c_4-11.mp3"],
+["ef3e_p-int_08c_reading_1.mp3"],
+["ef3e_p-int_08c_reading_2.mp3"],
+["ef3e_p-int_09a_reading.mp3"],
+["ef3e_p-int_09b_4-20.mp3"],
+["ef3e_p-int_09b_4-21.mp3"],
+["ef3e_p-int_09b_reading.mp3"],
+["ef3e_p-int_09c_4-29.mp3"],
+["ef3e_p-int_10a_4-37.mp3"],
+["ef3e_p-int_10a_4-41.mp3"],
+["ef3e_p-int_10a_reading.mp3"],
+["ef3e_p-int_10b_4-43.mp3"],
+["ef3e_p-int_10b_4-46.mp3"],
+["ef3e_p-int_10c_4-48.mp3"],
+["ef3e_p-int_10c_4-49.mp3"],
+["ef3e_p-int_10c_reading.mp3"],
+["ef3e_p-int_11a_4-56.mp3"],
+["ef3e_p-int_11a_reading.mp3"],
+["ef3e_p-int_11b_5-02.mp3"],
+["ef3e_p-int_11b_5-03.mp3"],
+["ef3e_p-int_11b_5-04.mp3"],
+["ef3e_p-int_11b_reading.mp3"],
+["ef3e_p-int_11c_5-05.mp3"],
+["ef3e_p-int_11c_5-11.mp3"],
+["ef3e_p-int_12a_5-17.mp3"],
+["ef3e_p-int_12a_5-19.mp3"],
+["ef3e_p-int_12a_5-20.mp3"],
+["ef3e_p-int_12a_reading.mp3"],
+["ef3e_p-int_12b_5-21.mp3"],
+["ef3e_p-int_12b_5-22.mp3"],
+["ef3e_p-int_12b_5-23.mp3"],
+["ef3e_p-int_12b_reading.mp3"],
+["ef3e_p-int_pe1_1-26.mp3"],
+["ef3e_p-int_pe1_1-27.mp3"],
+["ef3e_p-int_pe1_1-28.mp3"],
+["ef3e_p-int_pe1_1-29.mp3"],
+["ef3e_p-int_pe2_2-08.mp3"],
+["ef3e_p-int_pe2_2-11.mp3"],
+["ef3e_p-int_pe3_2-55.mp3"],
+["ef3e_p-int_pe3_2-57.mp3"],
+["ef3e_p-int_pe3_2-59.mp3"],
+["ef3e_p-int_pe4_3-39.mp3"],
+["ef3e_p-int_pe4_3-41.mp3"],
+["ef3e_p-int_pe4_3-43.mp3"],
+["ef3e_p-int_pe5_4-31.mp3"],
+["ef3e_p-int_pe5_4-33.mp3"],
+["ef3e_p-int_pe6_5-12.mp3"],
+["ef3e_p-int_pe6_5-13.mp3"],
+["ef3e_p-int_pe6_5-15.mp3"],
+["ef3e_p-int_r&c11&12_reading.mp3"],
+["ef3e_p-int_r&c1&2_reading.mp3"],
+["ef3e_p-int_r&c_1-53.mp3"],
+["ef3e_p-int_r&c_3-22.mp3"],
+["ef3e_p-int_r&c3&4_reading.mp3"],
+["ef3e_p-int_r&c_4-15.mp3"],
+["ef3e_p-int_r&c_4-54.mp3"],
+["ef3e_p-int_r&c_5-28.mp3"],
+["ef3e_p-int_r&c5&6_reading.mp3"],
+["ef3e_p-int_r&c7&8_reading.mp3"],
+["ef3e_p-int_r&c9&10_reading.mp3"]
+
+    ];
+
+    var div = $("#div");
+    var search = $("#search");
+    var divTitle = $("#title");
+    var divAudio = $("#audio");
+    var source = $("#source");
+    search.focus();
+
+    function clickOnLink(title, url, mp3) {
+        console.log('--clickOnLink');
+
+        source.attr('src', mp3);
+        divAudio.html('<div id="title">' + '<b><a target="_blank" href="' + url + '">' + title + '</a></b>' + '</div>' +
+            '<audio preload="none" controls="controls" style="width:100%;">\n' + //autoplay="1"
+            '            <source id="source" type="audio/mpeg" src="' + mp3 + '" />\n' +
+            '        </audio>');
+        //divTitle.html('<a target="_blank" href="' + url + '">' + title + '</a>');
+        window.scrollTo(0, 0);
+    }
+
+    function showItems(_this) {
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i][0].toLowerCase().includes($(_this).val().toLowerCase())) {
+                        var a = '<div target="_blank" onclick="clickOnLink(\'' + arr[i][0] + '\',\'' + arr[i][1] + '\',\'' + arr[i][2] + '\');" href="' + arr[i][1] + '">' + arr[i][0] + '</div><br/>';
+                        div.append(a);
+                    }
+                }
+    }
+
+    search.on( "keyup", function(event) {
+        if (event.keyCode == 27) {
+            $(this).val("");
+            //div.text("");
+        } else {
+            div.text("");
+            console.log(event.keyCode);
+            // div.append("<div>123</div>");
+
+            //if (search.val() != '') {
+                showItems(this);
+            //}
+        }
+    });
+
+                for (var i = 0; i < arr.length; i++) {
+                        var a = '<div target="_blank" onclick="clickOnLink(\'' + arr[i][0] + '\',\'' + arr[i][1] + '\',\'' + arr[i][2] + '\');" href="' + arr[i][1] + '">' + arr[i][0] + '</div><br/>';
+                        div.append(a);
+                }
+
+
+</script>
+</html>
